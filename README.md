@@ -1,2 +1,2 @@
 # vimrc
-.vimrc晒し
+.vimrc晒し(Cygwin用)
