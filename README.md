@@ -1,2 +1,2 @@
 # vimrc
-.vimrc晒し(Cygwin用)
+.vimrc晒し(Cygwin, WSL対応)
