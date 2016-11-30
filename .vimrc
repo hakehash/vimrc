@@ -16,5 +16,4 @@ set t_Co=256
 set ww=b,s,h,l,<,>,~,[,]
 set wildmenu
 source ~/.exrc
-source ~/.vimrcyg
 syntax on
