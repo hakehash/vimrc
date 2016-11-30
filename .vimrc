@@ -6,6 +6,7 @@ set bg=dark
 set clipboard=unnamed
 set nocp
 set et
+set fencs=iso-2022-jp,euc-jp,cp932,utf-8
 set showcmd
 set noswapfile
 set title
