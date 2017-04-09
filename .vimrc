@@ -6,14 +6,13 @@ set bg=dark
 set clipboard=unnamed
 set nocp
 set et
-set fencs=iso-2022-jp,euc-jp,cp932,utf-8
 set is
 set showcmd
 set noswapfile
 set title
 set ttimeoutlen=0
 set t_Co=256
-set ww=b,s,h,l,<,>,~,[,]
+set ww=b,s,~
 set wildmenu
 source ~/.exrc
 syntax on
