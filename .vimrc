@@ -1,4 +1,4 @@
-colorscheme desert
+colorscheme industry
 let loaded_matchparen=1
 set autochdir
 set backspace=indent,eol,start
@@ -7,7 +7,10 @@ set clipboard=unnamed
 set nocp
 set et
 set is
+set lcs=tab:>-,trail:_
 set showcmd
+set sta
+set sts=-1
 set noswapfile
 set title
 set ttimeoutlen=0
