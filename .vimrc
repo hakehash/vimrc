@@ -3,6 +3,7 @@ let loaded_matchparen=1
 set autochdir
 set backspace=indent,eol,start
 set bg=dark
+set bo=all
 set clipboard=unnamed
 set nocp
 set et
