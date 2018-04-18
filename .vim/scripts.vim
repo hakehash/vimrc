@@ -4,3 +4,4 @@ endif
 if getline(1) =~ "BveTs Map.*"
   setf bvemap
 endif
+
