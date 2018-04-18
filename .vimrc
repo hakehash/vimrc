@@ -1,4 +1,5 @@
 colorscheme industry
+filetype plugin indent on
 let loaded_matchparen=1
 set autochdir
 set backspace=indent,eol,start
@@ -19,4 +20,4 @@ set t_Co=256
 set ww=b,s,~
 set wildmenu
 source ~/.exrc
-syntax on
+syntax enable
