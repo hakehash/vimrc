@@ -1,3 +1,5 @@
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
 colorscheme industry
 filetype plugin indent on
 let loaded_matchparen=1
