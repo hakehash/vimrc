@@ -2,6 +2,8 @@ if v:version >= 800 || has("patch-7.4.2111")
   unlet! skip_defaults_vim
   source $VIMRUNTIME/defaults.vim
 endif
+source ~/.exrc
+syntax enable
 colorscheme industry
 filetype plugin indent on
 if has("win32unix")
@@ -12,6 +14,11 @@ if has("win32unix")
   let &t_SR.="\e[3 q"
 endif
 let loaded_matchparen=1
+noremap Y y$
+noremap ; :
+inoremap ( ()<LEFT>
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
 set autochdir
 set backspace=indent,eol,start
 set background=dark
@@ -32,5 +39,3 @@ set ttimeoutlen=0
 set t_Co=256
 set whichwrap=b,s,~
 set wildmenu
-source ~/.exrc
-syntax enable
