@@ -5,6 +5,9 @@ endif
 source ~/.exrc
 syntax enable
 colorscheme industry
+autocmd ColorScheme * highlight CursorLine cterm=NONE
+autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow
+autocmd ColorScheme * highlight LineNr ctermfg=Brown
 filetype plugin indent on
 if has("win32unix")
   let &t_te.="\e[0 q"
@@ -25,6 +28,7 @@ set background=dark
 set belloff=all
 set breakindent
 set clipboard=unnamed
+set cursorline
 set nocompatible
 set expandtab
 set incsearch
