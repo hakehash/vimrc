@@ -28,8 +28,8 @@ set background=dark
 set belloff=all
 set breakindent
 set clipboard=unnamed
-set cursorline
 set nocompatible
+set cursorline
 set expandtab
 set incsearch
 set listchars=tab:>-,trail:_

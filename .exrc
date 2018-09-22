@@ -1,10 +1,10 @@
 set exrc
 set flash
 set list
-set mat=1
+set matchtime=1
 set ruler
 set secure
 set showmatch
 set showmode
-set sw=2
-set ts=4
+set shiftwidth=2
+set tabstop=4
