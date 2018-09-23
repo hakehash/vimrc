@@ -5,9 +5,12 @@ endif
 source ~/.exrc
 syntax enable
 colorscheme industry
-autocmd ColorScheme * highlight CursorLine cterm=NONE
-autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow
-autocmd ColorScheme * highlight LineNr ctermfg=Brown
+augroup CursorLineNumHighlight
+  autocmd!
+  autocmd ColorScheme * highlight CursorLine cterm=NONE
+  autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow
+  autocmd ColorScheme * highlight LineNr ctermfg=Brown
+augroup END
 filetype plugin indent on
 if has("win32unix")
   let &t_te.="\e[0 q"
