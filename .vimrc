@@ -4,13 +4,13 @@ if v:version >= 800 || has("patch-7.4.2111")
 endif
 source ~/.exrc
 syntax enable
-colorscheme industry
 augroup CursorLineNumHighlight
   autocmd!
   autocmd ColorScheme * highlight CursorLine cterm=NONE
   autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow
   autocmd ColorScheme * highlight LineNr ctermfg=Brown
 augroup END
+colorscheme industry
 filetype plugin indent on
 if has("win32unix")
   let &t_te.="\e[0 q"
@@ -31,12 +31,15 @@ set background=dark
 set belloff=all
 set breakindent
 set clipboard=unnamed
-set nocompatible
+if &compatible
+  set nocompatible
+endif
 set cursorline
 set expandtab
 set incsearch
 set listchars=tab:>-,trail:_
 set mouse=h
+set shiftround
 set showcmd
 set smarttab
 set softtabstop=-1
