@@ -37,6 +37,7 @@ endif
 set cursorline
 set expandtab
 set incsearch
+set keywordprg=:help
 set listchars=tab:>-,trail:_
 set mouse=h
 set shiftround
