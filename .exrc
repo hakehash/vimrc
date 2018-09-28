@@ -1,3 +1,4 @@
+set noautoindent
 set exrc
 set flash
 set list
