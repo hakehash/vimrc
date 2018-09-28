@@ -1,6 +1,8 @@
-if v:version >= 800 || has("patch-7.4.2111")
-  unlet! skip_defaults_vim
-  source $VIMRUNTIME/defaults.vim
+if !has("nvim")
+  if v:version >= 800 || has("patch-7.4.2111")
+    unlet! skip_defaults_vim
+    source $VIMRUNTIME/defaults.vim
+  endif
 endif
 source ~/.exrc
 syntax enable
