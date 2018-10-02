@@ -1,6 +1,6 @@
 set noautoindent
 set exrc
-"set flash
+set flash
 set list
 set matchtime=1
 set ruler

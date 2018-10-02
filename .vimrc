@@ -3,8 +3,8 @@ if !has("nvim")
     unlet! skip_defaults_vim
     source $VIMRUNTIME/defaults.vim
   endif
+  source ~/.exrc
 endif
-source ~/.exrc
 syntax enable
 augroup CursorLineNumHighlight
   autocmd!
