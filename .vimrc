@@ -25,9 +25,9 @@ let loaded_matchparen=1
 noremap Y y$
 noremap ; :
 inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
 inoremap { {}<LEFT>
 inoremap {<CR> {<CR>}<ESC>O
-inoremap [ []<LEFT>
 set autochdir
 set backspace=indent,eol,start
 set background=dark
