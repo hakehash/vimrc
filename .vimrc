@@ -29,8 +29,10 @@ inoremap [ []<LEFT>
 inoremap { {}<LEFT>
 inoremap {<CR> {<CR>}<ESC>O
 set autochdir
-set backspace=indent,eol,start
+set autoread
 set background=dark
+set backspace=indent,eol,start
+set nobackup
 set belloff=all
 set breakindent
 set clipboard=unnamed
@@ -39,6 +41,7 @@ if &compatible
 endif
 set cursorline
 set expandtab
+set hidden
 set incsearch
 set keywordprg=:help
 set listchars=tab:>-,trail:_
@@ -47,9 +50,12 @@ set shiftround
 set showcmd
 set smarttab
 set softtabstop=-1
+set nostartofline
 set noswapfile
 set title
 set ttimeoutlen=0
 set t_Co=256
+set noundofile
+set virtualedit=block
 set whichwrap=b,s,~
 set wildmenu
