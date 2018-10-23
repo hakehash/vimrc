@@ -15,6 +15,7 @@ augroup END
 colorscheme industry
 filetype plugin indent on
 if &term=~"xterm"
+  let &t_Co=256
   let &t_te.="\e[0 q"
   let &t_ti.="\e[2 q"
   let &t_EI.="\e[2 q"
@@ -28,6 +29,9 @@ inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
 inoremap {<CR> {<CR>}<ESC>O
+if &compatible
+  set nocompatible
+endif
 set autochdir
 set autoread
 set background=dark
@@ -36,9 +40,6 @@ set nobackup
 set belloff=all
 set breakindent
 set clipboard=unnamed
-if &compatible
-  set nocompatible
-endif
 set cursorline
 set expandtab
 set hidden
@@ -54,7 +55,6 @@ set nostartofline
 set noswapfile
 set title
 set ttimeoutlen=0
-set t_Co=256
 set noundofile
 set virtualedit=block
 set whichwrap=b,s,~
