@@ -2,7 +2,7 @@
 " Language:     html
 " Maintainer:   hakehash
 " URL:          http://github.com/hakehash/vimrc
-" Last Changed: 22 Sep 2018
+" Last Changed: 24 Oct 2018
 
-inoremap < <><LEFT>
+inoremap <buffer> < <><LEFT>
 setlocal matchpairs+=<:>
