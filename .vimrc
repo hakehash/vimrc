@@ -28,7 +28,6 @@ noremap ; :
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
-inoremap {<CR> {<CR>}<ESC>O
 if &compatible
   set nocompatible
 endif
