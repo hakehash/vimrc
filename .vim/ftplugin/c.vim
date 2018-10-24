@@ -4,5 +4,5 @@
 " URL:          http://github.com/hakehash/vimrc
 " Last Changed: 24 Oct 2018
 
-inoremap {<CR> {<CR>}<ESC>O
+inoremap <buffer> {<CR> {<CR>}<ESC>O
 setlocal cindent
