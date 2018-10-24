@@ -1,5 +1,5 @@
 " Vim filetype plugin file
-" Language:     latex
+" Language:     LaTeX
 " Maintainer:   hakehash
 " URL:          http://github.com/hakehash/vimrc
 " Last Changed: 24 Oct 2018
