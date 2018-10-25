@@ -22,9 +22,12 @@ if &term=~"xterm"
   let &t_SI.="\e[6 q"
   let &t_SR.="\e[4 q"
 endif
-let loaded_matchparen=1
+let g:loaded_matchparen=1
+let g:python_recommended_style=0
+let g:tex_flavor="latex"
 noremap Y y$
 noremap ; :
+noremap : ;
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
