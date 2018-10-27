@@ -1,3 +1,4 @@
 # vimrc
-.vimrc晒し(Cygwin, WSL対応)  
-BveTs MapやLS-PrePostのためのsyntaxファイルも同梱しています(.vim/ 以下)
+## About
+My dotfiles of Vim, Neovim, nvi, and nano compatible with Cygwin and WSL. Syntax files of BveTs Map and LS-PrePost are also included.
+
