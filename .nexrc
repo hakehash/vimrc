@@ -1,1 +1,3 @@
 source ~/.exrc
+set filec=\	
+set searchincr
