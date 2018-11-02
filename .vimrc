@@ -31,6 +31,8 @@ noremap : ;
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
+vnoremap <C-a> <C-a>gv
+vnoremap <C-x> <C-x>gv
 if &compatible
   set nocompatible
 endif
