@@ -1,5 +1,4 @@
 set noautoindent
-set flash
 set ignorecase
 set list
 set matchtime=1

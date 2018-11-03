@@ -3,8 +3,16 @@ if !has("nvim")
     unlet! skip_defaults_vim
     source $VIMRUNTIME/defaults.vim
   endif
-  source ~/.exrc
+  if &term=~"xterm"
+    let &t_Co=256
+    let &t_te.="\e[0 q"
+    let &t_ti.="\e[2 q"
+    let &t_EI.="\e[2 q"
+    let &t_SI.="\e[6 q"
+    let &t_SR.="\e[4 q"
+  endif
 endif
+source ~/.exrc
 syntax enable
 augroup CursorLineNumHighlight
   autocmd!
@@ -14,14 +22,6 @@ augroup CursorLineNumHighlight
 augroup END
 colorscheme industry
 filetype plugin indent on
-if &term=~"xterm"
-  let &t_Co=256
-  let &t_te.="\e[0 q"
-  let &t_ti.="\e[2 q"
-  let &t_EI.="\e[2 q"
-  let &t_SI.="\e[6 q"
-  let &t_SR.="\e[4 q"
-endif
 let g:loaded_matchparen=1
 let g:python_recommended_style=0
 let g:tex_flavor="latex"
@@ -33,6 +33,8 @@ inoremap [ []<LEFT>
 inoremap { {}<LEFT>
 vnoremap <C-a> <C-a>gv
 vnoremap <C-x> <C-x>gv
+vnoremap < <gv
+vnoremap > >gv
 if &compatible
   set nocompatible
 endif
@@ -49,6 +51,7 @@ set expandtab
 set hidden
 set incsearch
 set keywordprg=:help
+set laststatus=1
 set listchars=tab:>-,trail:_
 set mouse=h
 set shiftround
