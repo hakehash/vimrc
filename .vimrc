@@ -4,15 +4,17 @@ if !has("nvim")
     source $VIMRUNTIME/defaults.vim
   endif
   if &term=~"xterm"
-    let &t_Co=256
+    let &t_Co = 256
     let &t_te.="\e[0 q"
     let &t_ti.="\e[2 q"
     let &t_EI.="\e[2 q"
     let &t_SI.="\e[6 q"
     let &t_SR.="\e[4 q"
   endif
+  source ~/.exrc
+else
+  silent! source ~/.exrc
 endif
-source ~/.exrc
 syntax enable
 augroup CursorLineNumHighlight
   autocmd!
@@ -48,6 +50,7 @@ set breakindent
 set clipboard=unnamed
 set cursorline
 set expandtab
+set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
 set hidden
 set incsearch
 set keywordprg=:help

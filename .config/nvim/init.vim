@@ -1,3 +1,4 @@
+"Type  :help nvim-from-vim<Enter>
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
