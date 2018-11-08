@@ -30,7 +30,9 @@ let g:tex_flavor="latex"
 noremap Y y$
 noremap ; :
 noremap : ;
-inoremap ( ()<LEFT>
+if executable("sl")
+  cnoremap sl !sl<CR>
+endif
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
 vnoremap <C-a> <C-a>gv
@@ -51,6 +53,7 @@ set clipboard=unnamed
 set cursorline
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
+set helpheight=50
 set hidden
 set incsearch
 set keywordprg=:help
