@@ -33,6 +33,7 @@ let g:tex_flavor="latex"
 noremap Y y$
 noremap ; :
 noremap : ;
+inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
 vnoremap <C-a> <C-a>gv
