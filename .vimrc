@@ -12,6 +12,9 @@ if !has("nvim")
     let &t_SR.="\e[4 q"
   endif
   source ~/.exrc
+  if executable("sl")
+    cnoremap sl !sl
+  endif
 else
   silent! source ~/.exrc
 endif
@@ -30,9 +33,6 @@ let g:tex_flavor="latex"
 noremap Y y$
 noremap ; :
 noremap : ;
-if executable("sl")
-  cnoremap sl !sl<CR>
-endif
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
 vnoremap <C-a> <C-a>gv
