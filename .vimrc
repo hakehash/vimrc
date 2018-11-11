@@ -13,7 +13,9 @@ if !has("nvim")
   endif
   source ~/.exrc
   if executable("sl")
-    cnoremap sl !sl
+    "command! -nargs=* SL !sl -<args>
+    "cnoreabbrev sl SL
+    cnoreabbrev sl !sl<CR>
   endif
 else
   silent! source ~/.exrc
