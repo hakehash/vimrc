@@ -11,12 +11,10 @@ if !has("nvim")
     let &t_SI.="\e[6 q"
     let &t_SR.="\e[4 q"
   endif
-  source ~/.exrc
   if executable("sl")
-    "command! -nargs=* SL !sl -<args>
-    "cnoreabbrev sl SL
     cnoreabbrev sl !sl<CR>
   endif
+  source ~/.exrc
 else
   silent! source ~/.exrc
 endif
@@ -30,7 +28,7 @@ augroup END
 colorscheme industry
 filetype plugin indent on
 let g:loaded_matchparen=1
-let g:python_recommended_style=0
+let g:python_recommended_style=0  "I redefined indent in my ftplugin
 let g:tex_flavor="latex"
 noremap Y y$
 noremap ; :
@@ -47,7 +45,6 @@ if &compatible
 endif
 set autochdir
 set autoread
-set background=dark
 set backspace=indent,eol,start
 set nobackup
 set belloff=all
