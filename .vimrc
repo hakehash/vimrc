@@ -18,18 +18,22 @@ if !has("nvim")
 else
   silent! source ~/.exrc
 endif
-syntax enable
-augroup CursorLineNumHighlight
-  autocmd!
-  autocmd ColorScheme * highlight CursorLine cterm=NONE
-  autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow
-  autocmd ColorScheme * highlight LineNr ctermfg=Brown
-augroup END
-colorscheme industry
-filetype plugin indent on
-let g:loaded_matchparen=1
-let g:python_recommended_style=0  "I redefined indent in my ftplugin
-let g:tex_flavor="latex"
+if has('syntax')
+  syntax enable
+  augroup CursorLineNumHighlight
+    autocmd!
+    autocmd ColorScheme * highlight CursorLine cterm=NONE
+    autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow
+    autocmd ColorScheme * highlight LineNr ctermfg=Brown
+  augroup END
+  colorscheme industry
+  filetype plugin indent on
+endif
+if has('eval')
+  let g:loaded_matchparen=1
+  let g:python_recommended_style=0  "I redefined indent in my ftplugin
+  let g:tex_flavor="latex"
+endif
 noremap Y y$
 noremap ; :
 noremap : ;
@@ -43,7 +47,9 @@ vnoremap > >gv
 if &compatible
   set nocompatible
 endif
-set autochdir
+if has('autochdir')
+  set autochdir
+endif
 set autoread
 set backspace=indent,eol,start
 set nobackup
@@ -59,7 +65,9 @@ set incsearch
 set keywordprg=:help
 set laststatus=1
 set listchars=tab:>-,trail:_
-set mouse=h
+if has('mouse')
+  set mouse=h
+endif
 set shiftround
 set showcmd
 set smarttab
