@@ -1,5 +1,5 @@
-if !has("nvim")
-  if v:version >= 800 || has("patch-7.4.2111")
+if !has('nvim')
+  if v:version >= 800 || has('patch-7.4.2111')
     unlet! skip_defaults_vim
     source $VIMRUNTIME/defaults.vim
   endif
@@ -11,7 +11,7 @@ if !has("nvim")
     let &t_SI.="\e[6 q"
     let &t_SR.="\e[4 q"
   endif
-  if executable("sl")
+  if executable('sl')
     cnoreabbrev sl !sl<CR>
   endif
   source ~/.exrc
