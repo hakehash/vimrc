@@ -38,8 +38,8 @@ noremap Y y$
 noremap ; :
 noremap : ;
 noremap <F3> n
-if exists("*strftime")
-  inoremap <expr> <F5> strftime('%R %Y/%m/%d%n')
+if exists('*strftime')
+  inoremap <expr> <F5> strftime('%-H:%M %Y/%m/%d%n')
 endif
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
