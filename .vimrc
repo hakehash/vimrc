@@ -30,6 +30,7 @@ if has('syntax')
   filetype plugin indent on
 endif
 if has('eval')
+  let g:changelog_dateformat="%Y-%m-%d"
   let g:loaded_matchparen=1
   let g:python_recommended_style=0  "I redefined indent in my ftplugin
   let g:tex_flavor="latex"
@@ -39,7 +40,7 @@ noremap ; :
 noremap : ;
 noremap <F3> n
 if exists('*strftime')
-  inoremap <expr> <F5> strftime('%-H:%M %Y/%m/%d')
+  inoremap <expr> <F5> strftime(g:changelog_dateformat)
 endif
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
