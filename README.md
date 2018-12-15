@@ -16,7 +16,6 @@ If you do not have Vim yet, you can install it by executing:
     
 And then, copy **.exrc** and **.vimrc** to your home directory.
 
-    cd ../
     git clone https://github.com/hakehash/vimrc
     cd vimrc
     cp .exrc .vimrc ~
