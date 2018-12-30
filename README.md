@@ -29,9 +29,9 @@ Copy **.config/nvim/init.vim**, **.exrc**, and **.vimrc** to your home directory
     cp .config/nvim/init.vim ~/.config/nvim/
 
 ### for nvi users
-Copy **.nexrc**, **.exrc**, and **.vimrc** to your home directory.
+Copy **.nexrc** and **.exrc** to your home directory.
 
-`cp .nexrc .exrc .vimrc ~`
+`cp .nexrc .exrc ~`
 
 ### for nano users
 Copy **.nanorc** to your home directory.
