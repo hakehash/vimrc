@@ -12,7 +12,11 @@ if !has('nvim')
     let &t_SR.="\e[4 q"
   endif
   if executable('sl')
-    cnoreabbrev sl !sl<CR>
+    function g:SL()
+      silent !sl
+      redraw!
+    endfunction
+    cnoreabbrev sl call SL()
   endif
   source ~/.exrc
 else
