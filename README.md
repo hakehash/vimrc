@@ -1,5 +1,5 @@
 # vimrc
-My dotfiles of Vim, Neovim, nvi, and nano compatible with Cygwin and WSL.  
+My dotfiles of Vim, Neovim, nvi, and nano which compatible with Cygwin and WSL.  
 There is no error detected even if you are using vim.tiny!  
 (Of course I strongly recommend you to use Huge version of Vim :)  
 Syntax files of BveTs Map and LS-PrePost are also included.
