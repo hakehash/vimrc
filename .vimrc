@@ -65,6 +65,7 @@ set nobackup
 set belloff=all
 set breakindent
 set clipboard=unnamed
+set cpoptions=aABceFs
 set cursorline
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
