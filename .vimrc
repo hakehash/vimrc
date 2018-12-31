@@ -10,13 +10,16 @@ if !has('nvim')
     let &t_EI.="\e[2 q"
     let &t_SI.="\e[6 q"
     let &t_SR.="\e[4 q"
+    let &t_vb ="[?5h$<100>[?5l"
   endif
   if executable('sl')
-    function g:SL()
+    function! g:SL()
       silent !sl
       redraw!
     endfunction
-    cnoreabbrev sl call SL()
+    command! SL call SL()
+    cnoreabbrev sl SL
+    set nosmartcase
   endif
   source ~/.exrc
 else
@@ -28,7 +31,7 @@ if has('syntax')
     autocmd!
     autocmd ColorScheme * highlight CursorLine cterm=NONE
     autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow
-    autocmd ColorScheme * highlight LineNr ctermfg=Brown
+    autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan
   augroup END
   colorscheme industry
   filetype plugin indent on
@@ -62,7 +65,9 @@ endif
 set autoread
 set backspace=indent,eol,start
 set nobackup
-set belloff=all
+if has('patch-7.4.793')
+  set belloff=all
+endif
 set breakindent
 set clipboard=unnamed
 set cpoptions=aABceFs
@@ -88,5 +93,6 @@ set title
 set ttimeoutlen=0
 set noundofile
 set virtualedit=block
+set visualbell
 set whichwrap=b,s,~
 set wildmenu
