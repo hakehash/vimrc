@@ -56,6 +56,7 @@ vnoremap <C-a> <C-a>gv
 vnoremap <C-x> <C-x>gv
 vnoremap < <gv
 vnoremap > >gv
+runtime ftplugin/man.vim
 if &compatible
   set nocompatible
 endif
@@ -75,6 +76,7 @@ set cursorline
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
 set helpheight=50
+set helplang=en,ja
 set hidden
 set incsearch
 set keywordprg=:help
