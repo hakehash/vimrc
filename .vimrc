@@ -1,4 +1,4 @@
-if !has('nvim')
+if !has('nvim') "{{{
   if v:version >= 800 || has('patch-7.4.2111')
     unlet! skip_defaults_vim
     source $VIMRUNTIME/defaults.vim
@@ -24,8 +24,8 @@ if !has('nvim')
   source ~/.exrc
 else
   silent! source ~/.exrc
-endif
-if has('syntax')
+endif "}}}
+if has('syntax') "{{{
   syntax enable
   augroup CursorLineNumHighlight
     autocmd!
@@ -35,13 +35,14 @@ if has('syntax')
   augroup END
   colorscheme industry
   filetype plugin indent on
-endif
-if has('eval')
+endif "}}}
+if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d"
   let g:loaded_matchparen=1
-  let g:python_recommended_style=0  "I redefined indent in my ftplugin
+  let g:python_recommended_style=0 " ~/.vim/ftplugin/python.vim
   let g:tex_flavor="latex"
-endif
+endif "}}}
+"   map {{{
 noremap Y y$
 noremap ; :
 noremap : ;
@@ -56,7 +57,9 @@ vnoremap <C-a> <C-a>gv
 vnoremap <C-x> <C-x>gv
 vnoremap < <gv
 vnoremap > >gv
+" }}}
 runtime ftplugin/man.vim
+" options {{{
 if &compatible
   set nocompatible
 endif
@@ -98,3 +101,5 @@ set virtualedit=block
 set visualbell
 set whichwrap=b,s,~
 set wildmenu
+" }}}
+" vim: foldmethod=marker
