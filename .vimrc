@@ -29,7 +29,7 @@ if has('syntax') "{{{
   syntax enable
   augroup CursorLineNumHighlight
     autocmd!
-    autocmd ColorScheme * highlight CursorLine cterm=NONE
+    autocmd ColorScheme * highlight CursorLine cterm=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow
     autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan
   augroup END
@@ -58,7 +58,6 @@ vnoremap <C-x> <C-x>gv
 vnoremap < <gv
 vnoremap > >gv
 " }}}
-runtime ftplugin/man.vim
 " options {{{
 if &compatible
   set nocompatible
@@ -69,6 +68,7 @@ endif
 set autoread
 set backspace=indent,eol,start
 set nobackup
+set backupdir-=.
 if has('patch-7.4.793')
   set belloff=all
 endif
@@ -79,7 +79,7 @@ set cursorline
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
 set helpheight=50
-set helplang=en,ja
+set helplang=en,ja,ru
 set hidden
 set incsearch
 set keywordprg=:help
@@ -96,6 +96,7 @@ set nostartofline
 set noswapfile
 set title
 set ttimeoutlen=0
+set undodir=~/tmp,~/
 set noundofile
 set virtualedit=block
 set visualbell
