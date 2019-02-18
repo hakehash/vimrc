@@ -89,6 +89,7 @@ if has('mouse')
   set mouse=h
 endif
 set shiftround
+set shortmess+=A
 set showcmd
 set smarttab
 set softtabstop=-1
