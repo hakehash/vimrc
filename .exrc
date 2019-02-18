@@ -1,4 +1,5 @@
 set noautoindent
+set cedit=
 set directory=/tmp
 set flash
 set ignorecase
