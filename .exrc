@@ -1,10 +1,8 @@
 set noautoindent
-set cedit=
 set directory=/tmp
 set flash
 set ignorecase
 set list
-set matchtime=1
 set ruler
 set showmatch
 set showmode

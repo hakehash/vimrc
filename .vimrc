@@ -19,7 +19,6 @@ if !has('nvim') "{{{
     endfunction
     command! SL call SL()
     cnoreabbrev sl SL
-    set nosmartcase
   endif
   source ~/.exrc
 else
@@ -85,12 +84,14 @@ set incsearch
 set keywordprg=:help
 set laststatus=1
 set listchars=tab:>-,trail:_
+set matchtime=1
 if has('mouse')
   set mouse=h
 endif
 set shiftround
 set shortmess+=A
 set showcmd
+set smartcase
 set smarttab
 set softtabstop=-1
 set nostartofline

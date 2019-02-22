@@ -1,3 +1,5 @@
 source ~/.exrc
+set cedit=
 set filec=\	
+set matchtime=1
 set searchincr
