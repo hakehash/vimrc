@@ -1,5 +1,5 @@
 # vimrc
-My dotfiles of Vim, Neovim, nvi, and nano which compatible with Cygwin and WSL.  
+My dotfiles of Vim, Neovim, nvi, elvis, and nano which compatible with Cygwin and WSL.  
 There is no error detected even if you are using vim.tiny!  
 (Of course I strongly recommend you to use Huge version of Vim :)  
 Syntax files of BveTs Map and LS-PrePost are also included.
@@ -13,7 +13,7 @@ If you do not have Vim yet, you can install it by executing:
     cd vim
     ./configure --with-features=huge --enable-multibyte --with-x --enable-gui=gtk3 --enable-fail-if-missing
     make && sudo make install
-    
+
 And then, copy **.exrc** and **.vimrc** to your home directory.
 
     git clone https://github.com/hakehash/vimrc
@@ -31,9 +31,14 @@ Copy **.config/nvim/init.vim**, **.exrc**, and **.vimrc** to your home directory
 ### for nvi users
 Copy **.nexrc** and **.exrc** to your home directory.
 
-`cp .nexrc .exrc ~`
+    cp .exrc .nexrc ~
+
+### for elvis users
+Copy **.nexrc** and **.exrc** to your home directory.
+
+    cp .exrc .elvisrc ~
 
 ### for nano users
 Copy **.nanorc** to your home directory.
 
-`cp .nanorc ~`
+    cp .nanorc ~
