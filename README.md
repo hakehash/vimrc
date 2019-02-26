@@ -29,12 +29,12 @@ Copy **.config/nvim/init.vim**, **.exrc**, and **.vimrc** to your home directory
     cp .config/nvim/init.vim ~/.config/nvim/
 
 ### for nvi users
-Copy **.nexrc** and **.exrc** to your home directory.
+Copy **.exrc** and **.nexrc** to your home directory.
 
     cp .exrc .nexrc ~
 
 ### for elvis users
-Copy **.nexrc** and **.exrc** to your home directory.
+Copy **.exrc** and **.elvisrc** to your home directory.
 
     cp .exrc .elvisrc ~
 
