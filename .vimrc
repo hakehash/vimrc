@@ -98,8 +98,10 @@ set nostartofline
 set noswapfile
 set title
 set ttimeoutlen=0
-set undodir=~/tmp,~/
-set noundofile
+if has('persistent_undo')
+  set undodir=~/tmp,~/
+  set noundofile
+endif
 set virtualedit=block
 set visualbell
 set whichwrap=b,s,~
