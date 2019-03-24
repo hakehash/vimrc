@@ -12,7 +12,7 @@ if !has('nvim') "{{{
     let &t_SR.="\e[4 q"
     let &t_vb ="[?5h$<100>[?5l"
   endif
-  if executable('sl')
+  if executable('sl') && !has('gui_running')
     function! g:SL()
       silent !sl
       redraw!
@@ -61,6 +61,7 @@ vnoremap > >gv
 if &compatible
   set nocompatible
 endif
+set ambiwidth=double
 if has('autochdir')
   set autochdir
 endif
