@@ -87,7 +87,11 @@ set laststatus=1
 set listchars=tab:>-,trail:_
 set matchtime=1
 if has('mouse')
-  set mouse=h
+  if executable('toolbox')
+    set mouse=a
+  else
+    set mouse=h
+  endif
 endif
 set shiftround
 set shortmess+=A
