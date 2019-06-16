@@ -73,8 +73,9 @@ if has('patch-7.4.793')
   set belloff=all
 endif
 set breakindent
+set breakindentopt=min:20,shift:0,sbr
 set clipboard=unnamed
-set cpoptions=aABceFs
+set cpoptions=aABceFsn
 set cursorline
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
@@ -95,6 +96,7 @@ if has('mouse')
 endif
 set shiftround
 set shortmess+=A
+set showbreak=>\ 
 set showcmd
 set smartcase
 set smarttab
@@ -111,5 +113,6 @@ set virtualedit=block
 set visualbell
 set whichwrap=b,s,~
 set wildmenu
+set writebackup
 " }}}
 " vim: foldmethod=marker
