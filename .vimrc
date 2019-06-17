@@ -73,7 +73,7 @@ if has('patch-7.4.793')
   set belloff=all
 endif
 set breakindent
-set breakindentopt=min:20,shift:0,sbr
+set breakindentopt=min:20,shift:-2,sbr
 set clipboard=unnamed
 set cpoptions=aABceFsn
 set cursorline
