@@ -11,7 +11,7 @@ If you do not have Vim yet, you can install it by executing:
     sudo apt install build-essential libncurses5-dev libgtk-3-dev libx11-dev libxt-dev
     git clone https://github.com/vim/vim.git
     cd vim
-    ./configure --with-features=huge --enable-multibyte --with-x --enable-gui=gtk3 --enable-fail-if-missing
+    ./configure CFLAGS=-fPIC --with-features=huge --enable-multibyte --with-x --enable-gui=gtk3 --enable-fail-if-missing
     make && sudo make install
 
 And then, copy **.exrc** and **.vimrc** to your home directory.
