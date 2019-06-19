@@ -58,9 +58,9 @@ vnoremap < <gv
 vnoremap > >gv
 " }}}
 " options {{{
-if &compatible
+silent! while 0
   set nocompatible
-endif
+silent! endwhile
 set ambiwidth=double
 if has('autochdir')
   set autochdir
