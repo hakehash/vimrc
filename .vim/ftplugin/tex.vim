@@ -8,3 +8,4 @@ inoremap <buffer> $ $$<LEFT>
 if has('syntax') && has('eval')
   packadd matchit
 endif
+setlocal makeprg=ptex2pdf\ -l\ %
