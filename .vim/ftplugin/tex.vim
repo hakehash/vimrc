@@ -2,10 +2,13 @@
 " Language:     LaTeX
 " Maintainer:   hakehash
 " URL:          http://github.com/hakehash/vimrc
-" Last Changed: 21 Jun 2019
+" Last Changed: 27 Jun 2019
 
 inoremap <buffer> $ $$<LEFT>
 if has('syntax') && has('eval')
   packadd matchit
 endif
-setlocal makeprg=ptex2pdf\ -l\ %
+
+if !filereadable('Makefile')
+  setlocal makeprg=ptex2pdf\ -l\ %
+endif
