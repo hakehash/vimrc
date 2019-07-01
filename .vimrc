@@ -36,10 +36,13 @@ if has('syntax') "{{{
   filetype plugin indent on
 endif "}}}
 if has('eval') "{{{
-  let g:changelog_dateformat="%Y-%m-%d"
+  let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
   let g:loaded_matchparen=1
-  let g:python_recommended_style=0 " ~/.vim/ftplugin/python.vim
-  let g:tex_flavor="latex"
+  let g:python_recommended_style=0      " ~/.vim/ftplugin/python.vim
+  let g:rst_style=1
+  let g:tex_conceal="abdmg"
+  let g:tex_flavor="latex"              " ~/.vim/ftplugin/tex.vim
+  let g:tex_fold_enabled=1
 endif "}}}
 "   map {{{
 noremap Y y$
@@ -75,6 +78,8 @@ endif
 set breakindent
 set breakindentopt=min:20,shift:-2,sbr
 set clipboard=unnamed
+set concealcursor=
+set conceallevel=0
 set cpoptions=aABceFsn
 set cursorline
 set expandtab
@@ -85,6 +90,7 @@ set hidden
 set incsearch
 set keywordprg=:help
 set laststatus=1
+set linebreak
 set listchars=tab:>-,trail:_
 set matchtime=1
 if has('mouse')
