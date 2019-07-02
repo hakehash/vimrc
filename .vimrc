@@ -28,8 +28,10 @@ if has('syntax') "{{{
   syntax enable
   augroup CursorLineNumHighlight
     autocmd!
+    autocmd ColorScheme * highlight Conceal ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLine cterm=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow guifg=Yellow
+    autocmd ColorScheme * highlight Folded ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
   augroup END
   colorscheme industry
@@ -78,7 +80,7 @@ set breakindent
 set breakindentopt=min:20,shift:-2,sbr
 set clipboard=unnamed
 set concealcursor=
-set conceallevel=0
+set conceallevel=2
 set cpoptions=aABceFsn
 set cursorline
 set expandtab
