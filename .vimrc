@@ -121,4 +121,4 @@ set whichwrap=b,s,~
 set wildmenu
 set writebackup
 " }}}
-" vim: foldmethod=marker
+" vim: foldmethod=marker commentstring="%s
