@@ -29,8 +29,8 @@ if has('syntax') "{{{
   augroup CursorLineNumHighlight
     autocmd!
     autocmd ColorScheme * highlight CursorLine cterm=NONE guibg=NONE
-    autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow
-    autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan
+    autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow guifg=Yellow
+    autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
   augroup END
   colorscheme industry
   filetype plugin indent on
@@ -71,7 +71,6 @@ endif
 set autoread
 set backspace=indent,eol,start
 set nobackup
-set backupdir-=.
 if has('patch-7.4.793')
   set belloff=all
 endif
