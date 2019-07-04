@@ -20,7 +20,6 @@ And then, copy **.exrc** and **.vimrc** to your home directory.
     git clone https://github.com/hakehash/vimrc
     cd vimrc
     cp .exrc .vimrc ~
-    cp -r .vim/ ~/.vim/
 
 ### for Neovim users
 Copy **.config/nvim/init.vim**, **.exrc**, and **.vimrc** to your home directory.
