@@ -2,7 +2,8 @@
 My dotfiles of Vim, Neovim, nvi, elvis, and nano which compatible with Cygwin and WSL.  
 There is no error detected even if you are using vim.tiny!  
 (Of course I strongly recommend you to use Huge version of Vim :)  
-Syntax files of BveTs Map and LS-PrePost are also included.
+##See also
+Syntax files & ftplugins: [https://github.com/hakehash/.vim](https://github.com/hakehash/.vim)
 
 ## Installation
 ### for Vim users
