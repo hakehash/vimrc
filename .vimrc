@@ -108,6 +108,8 @@ set showcmd
 set smartcase
 set smarttab
 set softtabstop=-1
+set spell
+set spelllang=en,cjk
 set nostartofline
 set noswapfile
 set title
@@ -122,4 +124,4 @@ set whichwrap=b,s,~
 set wildmenu
 set writebackup
 " }}}
-" vim: foldmethod=marker commentstring="%s
+" vim: foldmethod=marker commentstring="%s nospell
