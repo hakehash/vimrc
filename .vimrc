@@ -42,7 +42,7 @@ if has('eval') "{{{
   let g:loaded_matchparen=1
   let g:python_recommended_style=0      " ~/.vim/ftplugin/python.vim
   let g:rst_style=1
-  let g:tex_conceal="abdmg"
+  let g:tex_conceal="bdmg"
   let g:tex_flavor="latex"              " ~/.vim/ftplugin/tex.vim
   let g:tex_fold_enabled=1
 endif "}}}
