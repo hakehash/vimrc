@@ -108,7 +108,6 @@ set showcmd
 set smartcase
 set smarttab
 set softtabstop=-1
-set spell
 set spelllang=en,cjk
 set nostartofline
 set noswapfile
