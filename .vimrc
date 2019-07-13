@@ -45,6 +45,7 @@ if has('eval') "{{{
   let g:tex_conceal="bdmg"
   let g:tex_flavor="latex"              " ~/.vim/ftplugin/tex.vim
   let g:tex_fold_enabled=1
+  let g:vimsyn_folding="af"
 endif "}}}
 "   map {{{
 noremap Y y$
