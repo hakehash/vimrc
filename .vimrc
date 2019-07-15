@@ -58,6 +58,10 @@ endif
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
+inoremap <Up> <C-o>gk
+inoremap <Down> <C-o>gj
+nnoremap <Up> gk
+nnoremap <Down> gj
 vnoremap <C-a> <C-a>gv
 vnoremap <C-x> <C-x>gv
 vnoremap < <gv
