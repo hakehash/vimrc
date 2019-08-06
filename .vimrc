@@ -108,7 +108,7 @@ if has('mouse')
 endif
 set shiftround
 set shortmess+=A
-set shortmess-=sS
+set shortmess-=Ss
 set showbreak=>\ 
 set showcmd
 set smartcase
