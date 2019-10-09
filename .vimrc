@@ -24,6 +24,12 @@ if !has('nvim') "{{{
 else
   silent! source ~/.exrc
 endif "}}}
+if executable('evince') "{{{
+  function! g:Evince()
+    !evince "%:r"."pdf" &
+  endfunction
+  command! Evince call Evince()
+endif "}}}
 if has('syntax') "{{{
   syntax enable
   augroup CursorLineNumHighlight
