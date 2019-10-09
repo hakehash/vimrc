@@ -25,10 +25,7 @@ else
   silent! source ~/.exrc
 endif "}}}
 if executable('evince') "{{{
-  function! g:Evince()
-    !evince "%:r"."pdf" &
-  endfunction
-  command! Evince call Evince()
+  command! Evince !evince %:r.pdf &
 endif "}}}
 if has('syntax') "{{{
   syntax enable
