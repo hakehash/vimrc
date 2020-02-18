@@ -14,6 +14,10 @@ if !has('nvim') "{{{
   endif
   if executable('sl') && !has('gui_running')
     function! g:SL()
+      if has('sound')
+        let s:whistle=expand('$HOME/.vim/D51498.kiteki.2014.ogg')
+        echo sound_playfile(s:whistle)
+      endif
       silent !sl
       redraw!
     endfunction
