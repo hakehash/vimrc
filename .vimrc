@@ -17,7 +17,9 @@ if !has('nvim') "{{{
       if has('sound')
         "https://upload.wikimedia.org/wikipedia/commons/9/96/D51498.kiteki.2014.ogg
         let s:whistle=expand('~/.vim/D51498.kiteki.2014.ogg')
-        echo sound_playfile(s:whistle)
+        if filereadable(s:whistle)
+          echo sound_playfile(s:whistle)
+        endif
       endif
       silent !sl
       redraw!
