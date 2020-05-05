@@ -7,7 +7,7 @@ There is no error detected even if you are using vim.tiny!
 ### for Vim users
 If you do not have Vim yet, you can install it by executing:
 
-    sudo apt install build-essential gettext libncurses-dev libgtk-3-dev libx11-dev libxt-dev libcanberra-dev
+    sudo apt install build-essential gettext libncurses-dev libgtk-3-dev libx11-dev libxt-dev libcanberra-dev xsel
     git clone https://github.com/vim/vim.git
     cd vim
     ./configure CFLAGS=-fPIC --with-features=huge --enable-multibyte --with-x --enable-gui=gtk3 --enable-fail-if-missing
