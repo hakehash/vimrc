@@ -115,7 +115,7 @@ if has('mouse')
   if executable('toolbox')
     set mouse=a
   else
-    set mouse=h
+    set mouse=ch
   endif
 endif
 set shiftround
