@@ -118,6 +118,10 @@ if has('mouse')
     set mouse=ch
   endif
 endif
+if has('win32')
+  set runtimepath^=$HOME/.vim
+  set runtimepath+=$HOME/.vim/after
+endif
 set shiftround
 set shortmess+=A
 set shortmess-=Ss
