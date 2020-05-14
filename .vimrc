@@ -27,6 +27,11 @@ if !has('nvim') "{{{
     command! SL call SL()
     cnoreabbrev sl SL
   endif
+  if has('win32')
+    set t_Co=256
+    set runtimepath^=$HOME/.vim
+    set runtimepath+=$HOME/.vim/after
+  endif
   source ~/.exrc
 else
   silent! source ~/.exrc
@@ -117,10 +122,6 @@ if has('mouse')
   else
     set mouse=ch
   endif
-endif
-if has('win32')
-  set runtimepath^=$HOME/.vim
-  set runtimepath+=$HOME/.vim/after
 endif
 set shiftround
 set shortmess+=A
