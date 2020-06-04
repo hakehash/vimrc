@@ -31,11 +31,13 @@ if !has('nvim') "{{{
     set t_Co=256
     set runtimepath^=$HOME/.vim
     set runtimepath+=$HOME/.vim/after
+    let &packpath = &runtimepath
   endif
   source ~/.exrc
 else
   silent! source ~/.exrc
 endif "}}}
+packadd! killersheep
 if executable('evince') "{{{
   command! Evince !evince %:r.pdf &
 endif "}}}
