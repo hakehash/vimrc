@@ -1,16 +1,24 @@
 # vimrc
-My dotfiles of Vim, Neovim, nvi, elvis, and nano, which compatible with Cygwin and WSL.  
+My dotfiles of [Vim](https://github.com/vim/vim), [Neovim](https://github.com/neovim/neovim), nvi, elvis, and nano, which compatible with Cygwin and WSL.  
 There is no error detected even if you are using vim.tiny!  
 (Of course I strongly recommend you to use Huge version of Vim :)  
 
 ## Installation
 ### for Vim users
-If you do not have Vim yet, you can install it by executing:
+If you do not have [Vim](https://github.com/vim/vim) yet, you can install it by executing:
 
-    sudo apt install build-essential gettext libncurses-dev libgtk-3-dev libx11-dev libxt-dev libcanberra-dev xsel
+    sudo apt install build-essential gettext libncurses-dev libcanberra-dev libgtk-3-dev libx11-dev libxt-dev xsel
     git clone https://github.com/vim/vim.git
     cd vim
     ./configure CFLAGS=-fPIC --with-features=huge --enable-multibyte --with-x --enable-gui=gtk3 --enable-fail-if-missing
+    make && sudo make install
+
+If you do not need GUI environment (e.g. build on Raspberry Pi):
+
+    sudo apt install build-essential gettext libncurses-dev libcanberra-dev
+    git clone https://github.com/vim/vim.git
+    cd vim
+    ./configure CFLAGS=-fPIC --with-features=huge --enable-multibyte --without-x --disable-gui --enable-fail-if-missing
     make && sudo make install
 
 And then, copy **.exrc** and **.vimrc** to your home directory.
@@ -27,6 +35,10 @@ Copy **.config/nvim/init.vim**, **.exrc**, and **.vimrc** to your home directory
     cp .exrc .vimrc ~
     mkdir -p ~/.config/nvim
     cp .config/nvim/init.vim ~/.config/nvim/
+
+If you use [Neovim](https://github.com/neovim/neovim) on Windows, copy **init.vim** to following directory:
+
+    $HOME/AppData/Local/nvim/init.vim
 
 ### for nvi users
 Copy **.exrc** and **.nexrc** to your home directory.
@@ -45,3 +57,4 @@ Copy **.nanorc** to your home directory.
 
 ## See also
 Syntax files & ftplugins: [https://github.com/hakehash/.vim](https://github.com/hakehash/.vim)
+Japanese Vim Documents:  [https://github.com/vim-jp/vimdoc-ja](https://github.com/vim-jp/vimdoc-ja)
