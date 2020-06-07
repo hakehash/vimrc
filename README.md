@@ -38,7 +38,7 @@ Copy **.config/nvim/init.vim**, **.exrc**, and **.vimrc** to your home directory
 
 If you use [Neovim](https://github.com/neovim/neovim) on Windows, copy **init.vim** to following directory:
 
-    $HOME/AppData/Local/nvim/init.vim
+    $HOME/AppData/Local/nvim/
 
 ### for nvi users
 Copy **.exrc** and **.nexrc** to your home directory.
@@ -57,4 +57,5 @@ Copy **.nanorc** to your home directory.
 
 ## See also
 Syntax files & ftplugins: [https://github.com/hakehash/.vim](https://github.com/hakehash/.vim)
+
 Japanese Vim Documents:  [https://github.com/vim-jp/vimdoc-ja](https://github.com/vim-jp/vimdoc-ja)
