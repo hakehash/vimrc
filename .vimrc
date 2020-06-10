@@ -1,9 +1,9 @@
 if !has('nvim') "{{{
-  if v:version >= 800 || has('patch-7.4.2111')
+  if v:version >= 800 || has('patch-7.4.2111') "{{{
     unlet! skip_defaults_vim
     source $VIMRUNTIME/defaults.vim
-  endif
-  if &term=~"xterm"
+  endif "}}}
+  if &term=~"xterm" "{{{
     let &t_Co = 256
     let &t_te.="\e[0 q"
     let &t_ti.="\e[2 q"
@@ -11,8 +11,8 @@ if !has('nvim') "{{{
     let &t_SI.="\e[6 q"
     let &t_SR.="\e[4 q"
     let &t_vb ="[?5h$<100>[?5l"
-  endif
-  if executable('sl') && !has('gui_running')
+  endif "}}}
+  if executable('sl') && !has('gui_running') "{{{
     function! g:SL()
       if has('sound')
         "https://upload.wikimedia.org/wikipedia/commons/9/96/D51498.kiteki.2014.ogg
@@ -26,13 +26,13 @@ if !has('nvim') "{{{
     endfunction
     command! SL call SL()
     cnoreabbrev sl SL
-  endif
-  if has('win32')
+  endif "}}}
+  if has('win32') "{{{
     set t_Co=256
     set runtimepath^=$HOME/.vim
     set runtimepath+=$HOME/.vim/after
     let &packpath = &runtimepath
-  endif
+  endif "}}}
   source ~/.exrc
 else
   silent! source ~/.exrc
@@ -45,6 +45,7 @@ if has('syntax') "{{{
   syntax enable
   augroup CursorLineNumHighlight
     autocmd!
+    autocmd ColorScheme " highlight Normal ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight ColorColumn ctermbg=lightgrey
     autocmd ColorScheme * highlight Conceal ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLine cterm=NONE guibg=NONE
