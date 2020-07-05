@@ -3,7 +3,7 @@ if !has('nvim') "{{{
     unlet! skip_defaults_vim
     source $VIMRUNTIME/defaults.vim
   endif "}}}
-  if &term=~"xterm" "{{{
+  if &term=~"^xterm" || &term=~"win32" "{{{
     let &t_Co = 256
     let &t_te.="\e[0 q"
     let &t_ti.="\e[2 q"
