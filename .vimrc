@@ -17,6 +17,8 @@ if !has('nvim') "{{{
       if has('sound')
         "https://upload.wikimedia.org/wikipedia/commons/9/96/D51498.kiteki.2014.ogg
         let s:whistle=expand('~/.vim/D51498.kiteki.2014.ogg')
+        "https://voyager.jpl.nasa.gov/assets/audio/golden-record/train.wav
+        "let s:whistle=expand('~/.vim/train.wav')
         if filereadable(s:whistle)
           echo sound_playfile(s:whistle)
         endif
