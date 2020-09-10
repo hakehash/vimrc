@@ -31,6 +31,7 @@ if !has('nvim') "{{{
   endif "}}}
   if has('win32') "{{{
     set t_Co=256
+    set t_ut=
     set runtimepath^=$HOME/.vim
     set runtimepath+=$HOME/.vim/after
     let &packpath = &runtimepath
