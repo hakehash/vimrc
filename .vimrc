@@ -3,7 +3,7 @@ if !has('nvim') "{{{
     unlet! skip_defaults_vim
     source $VIMRUNTIME/defaults.vim
   endif "}}}
-  if &term=~"^xterm" || &term=~"win32" "{{{
+  if &term=~"^xterm" "{{{
     let &t_Co = 256
     let &t_te.="\e[0 q"
     let &t_ti.="\e[2 q"
@@ -19,6 +19,8 @@ if !has('nvim') "{{{
         let s:whistle=expand('~/.vim/D51498.kiteki.2014.ogg')
         "https://voyager.jpl.nasa.gov/assets/audio/golden-record/train.wav
         "let s:whistle=expand('~/.vim/train.wav')
+        "http://www.oslivesteam.com/sounds/whistle2.wav
+        "let s:whistle=expand('~/.vim/whistle2.wav')
         if filereadable(s:whistle)
           echo sound_playfile(s:whistle)
         endif
