@@ -110,6 +110,11 @@ set clipboard=unnamed
 set concealcursor=
 set conceallevel=2
 set cpoptions=aABceFsn
+if has('patch-7.4.399')
+  set cryptmethod=blowfish2
+elseif v:version >= 703
+  set cryptmethod=blowfish
+endif
 set cursorline
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
