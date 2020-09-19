@@ -3,6 +3,11 @@ if !has('nvim') "{{{
     unlet! skip_defaults_vim
     source $VIMRUNTIME/defaults.vim
   endif "}}}
+  if has('patch-7.4.399') "{{{
+    set cryptmethod=blowfish2
+  elseif v:version >= 703
+    set cryptmethod=blowfish
+  endif "}}}
   if &term=~"^xterm" "{{{
     let &t_Co = 256
     let &t_te.="\e[0 q"
@@ -32,10 +37,10 @@ if !has('nvim') "{{{
     cnoreabbrev sl SL
   endif "}}}
   if has('win32') "{{{
-    set t_ut=
     set runtimepath^=$HOME/.vim
     set runtimepath+=$HOME/.vim/after
     let &packpath = &runtimepath
+    set t_ut=
   endif "}}}
   source ~/.exrc
 else
@@ -110,11 +115,6 @@ set clipboard=unnamed
 set concealcursor=
 set conceallevel=2
 set cpoptions=aABceFsn
-if has('patch-7.4.399')
-  set cryptmethod=blowfish2
-elseif v:version >= 703
-  set cryptmethod=blowfish
-endif
 set cursorline
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
