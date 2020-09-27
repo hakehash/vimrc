@@ -110,7 +110,7 @@ set clipboard=unnamed
 set concealcursor=
 set conceallevel=2
 set cpoptions=aABceFsn
-if has('encryptv')
+if has('cryptv')
   if has('patch-7.4.399')
     set cryptmethod=blowfish2
   elseif v:version >= 703
