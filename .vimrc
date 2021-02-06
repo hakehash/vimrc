@@ -106,7 +106,11 @@ if has('patch-7.4.793')
 endif
 set breakindent
 set breakindentopt=min:20,shift:-2,sbr
-set clipboard=unnamed
+if has('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+endif
 set concealcursor=
 set conceallevel=2
 set cpoptions=aABceFsn
