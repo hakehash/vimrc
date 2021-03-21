@@ -46,7 +46,7 @@ if executable('evince') "{{{
   command! Evince !evince %:r.pdf &
 endif "}}}
 if executable('factor') "{{{
-  command! -nargs=1 Pf let @+ = substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g")
+  command! -nargs=1 Pf let @+=substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g")
 endif "}}}
 if has('syntax') "{{{
   syntax enable
