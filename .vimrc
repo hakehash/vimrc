@@ -13,7 +13,7 @@ if !has('nvim') "{{{
     let &t_vb ="[?5h$<100>[?5l"
   endif "}}}
   if executable('sl') && !has('gui_running') "{{{
-    function! g:SL()
+    function! g:SL(...)
       if has('sound')
         "https://upload.wikimedia.org/wikipedia/commons/9/96/D51498.kiteki.2014.ogg
         let s:whistle=expand('~/.vim/D51498.kiteki.2014.ogg')
@@ -28,7 +28,7 @@ if !has('nvim') "{{{
       silent !sl
       redraw!
     endfunction
-    command! SL call SL()
+    command! -nargs=? SL call SL(<f-args>)
     cnoreabbrev sl SL
   endif "}}}
   if has('win32') "{{{
@@ -45,6 +45,9 @@ packadd! killersheep
 if executable('evince') "{{{
   command! Evince !evince %:r.pdf &
 endif "}}}
+if executable('factor') "{{{
+  command! -nargs=1 Pf let @+ = substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g")
+endif "}}
 if has('syntax') "{{{
   syntax enable
   augroup CursorLineNumHighlight
@@ -128,7 +131,7 @@ if has('folding')
   set foldmethod=syntax
 endif
 set helpheight=50
-set helplang=en,ja,ru
+set helplang=ja,en,ru
 set hidden
 set incsearch
 set keywordprg=:help
