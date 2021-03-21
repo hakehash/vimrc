@@ -47,7 +47,7 @@ if executable('evince') "{{{
 endif "}}}
 if executable('factor') "{{{
   command! -nargs=1 Pf let @+ = substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g")
-endif "}}
+endif "}}}
 if has('syntax') "{{{
   syntax enable
   augroup CursorLineNumHighlight
