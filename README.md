@@ -59,3 +59,6 @@ Copy **.nanorc** to your home directory.
 Syntax files & ftplugins: [https://github.com/hakehash/.vim](https://github.com/hakehash/.vim)
 
 Japanese Vim Documents:  [https://github.com/vim-jp/vimdoc-ja](https://github.com/vim-jp/vimdoc-ja)
+
+Russian Vim Documents: [https://sourceforge.net/projects/ruvim2/](https://sourceforge.net/projects/ruvim2/)
+
