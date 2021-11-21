@@ -1,3 +1,10 @@
+if has('vim_starting') && has('reltime') "{{{
+  augroup VimStart
+    autocmd!
+    let g:startuptime = reltime()
+    autocmd VimEnter * let g:startuptime = reltime(g:startuptime) | echomsg 'startuptime: ' . reltimestr(g:startuptime)
+  augroup END
+endif "}}}
 if !has('nvim') "{{{
   if v:version >= 800 || has('patch-7.4.2111') "{{{
     unlet! skip_defaults_vim
@@ -31,8 +38,7 @@ if !has('nvim') "{{{
     command! -nargs=? SL call SL(<f-args>)
     cnoreabbrev sl SL
   endif "}}}
-  if has('win32') "{{{
-    set runtimepath^=$HOME/.vim
+  if has('win32') "{{{ set runtimepath^=$HOME/.vim
     set runtimepath+=$HOME/.vim/after
     let &packpath = &runtimepath
     set t_ut=
@@ -46,7 +52,7 @@ if executable('evince') "{{{
   command! Evince !evince %:r.pdf &
 endif "}}}
 if executable('factor') "{{{
-  command! -nargs=1 Pf let @+=substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g")
+  command! -nargs=1 Pf let @+=substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g") | echomsg expand(@+)
 endif "}}}
 if has('syntax') "{{{
   syntax enable
