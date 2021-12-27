@@ -38,7 +38,8 @@ if !has('nvim') "{{{
     command! -nargs=? SL call SL(<f-args>)
     cnoreabbrev sl SL
   endif "}}}
-  if has('win32') "{{{ set runtimepath^=$HOME/.vim
+  if has('win32') "{{{
+    set runtimepath^=$HOME/.vim
     set runtimepath+=$HOME/.vim/after
     let &packpath = &runtimepath
     set t_ut=
