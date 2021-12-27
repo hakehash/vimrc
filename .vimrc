@@ -47,7 +47,6 @@ if !has('nvim') "{{{
 else
   silent! source ~/.exrc
 endif "}}}
-packadd! killersheep
 if executable('evince') "{{{
   command! Evince !evince %:r.pdf &
 endif "}}}
@@ -70,6 +69,7 @@ if has('syntax') "{{{
   filetype plugin indent on
 endif "}}}
 if has('eval') "{{{
+  packadd! killersheep
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
   let g:loaded_matchparen=1
   let g:python_recommended_style=0      " ~/.vim/ftplugin/python.vim
