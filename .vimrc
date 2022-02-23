@@ -1,4 +1,4 @@
-if has('vim_starting') && has('reltime') "{{{
+if has('vim_starting') && has('reltime') && !has('win32') "{{{
   augroup VimStart
     autocmd!
     let g:startuptime = reltime()
