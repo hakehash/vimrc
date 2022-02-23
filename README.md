@@ -58,7 +58,7 @@ Copy **.nanorc** to your home directory.
 ### for Emacs users
 Use [Vim](https://github.com/vim/vim).
 
-    sudo apt install libxpm-dev libgif-dev libtiff-dev
+    sudo apt install libgnutls28-dev libncurses-dev libxpm-dev libgif-dev libtiff-dev
     curl -O http://ftpmirror.gnu.org/emacs/emacs-27.2.tar.xz
     tar xf emacs-27.2.tar.xz
     cd emacs-27.2
