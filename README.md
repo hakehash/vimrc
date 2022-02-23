@@ -55,6 +55,17 @@ Copy **.nanorc** to your home directory.
 
     cp .nanorc ~
 
+### for Emacs users
+Use [Vim](https://github.com/vim/vim).
+
+    sudo apt install libxpm-dev libgif-dev libtiff-dev
+    curl -O http://ftpmirror.gnu.org/emacs/emacs-27.2.tar.xz
+    tar xf emacs-27.2.tar.xz
+    cd emacs-27.2
+    ./configure --with-mailutils
+    make
+    sudo make install
+
 ## See also
 Syntax files & ftplugins: [https://github.com/hakehash/.vim](https://github.com/hakehash/.vim)
 
