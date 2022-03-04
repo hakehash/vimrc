@@ -59,9 +59,10 @@ Copy **.nanorc** to your home directory.
 Use [Vim](https://github.com/vim/vim).
 
     sudo apt install libgnutls28-dev libncurses-dev libxpm-dev libxaw7-dev libgif-dev libtiff-dev
-    curl -O http://ftpmirror.gnu.org/emacs/emacs-27.2.tar.xz
+    curl -O http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-27.2.tar.xz
     tar xf emacs-27.2.tar.xz
     cd emacs-27.2
+    ./autogen.sh
     ./configure --with-mailutils --with-x-toolkit=lucid
     make
     sudo make install
