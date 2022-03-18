@@ -58,7 +58,7 @@ Copy **.nanorc** to your home directory.
 ### for Emacs users
 Use [Vim](https://github.com/vim/vim).
 
-    sudo apt install libgnutls28-dev libncurses-dev libxpm-dev libxaw7-dev libgif-dev libtiff-dev
+    sudo apt install libgnutls28-dev libncurses-dev libxpm-dev libxaw7-dev libgif-dev libtiff-dev ncurses-term
     curl -O http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-27.2.tar.xz
     tar xf emacs-27.2.tar.xz
     cd emacs-27.2
@@ -66,6 +66,7 @@ Use [Vim](https://github.com/vim/vim).
     ./configure --with-mailutils --with-x-toolkit=lucid
     make
     sudo make install
+    TERM=xterm-direct emacs -nw
 
 ## See also
 Syntax files & ftplugins: [https://github.com/hakehash/.vim](https://github.com/hakehash/.vim)
