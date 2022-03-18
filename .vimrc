@@ -132,6 +132,7 @@ if has('cryptv')
   endif
 endif
 set cursorline
+set errorbells
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
 if has('folding')
