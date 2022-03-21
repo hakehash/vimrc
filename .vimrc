@@ -35,8 +35,10 @@ if !has('nvim') "{{{
       silent !sl
       redraw!
     endfunction
-    command! -nargs=? SL call SL(<f-args>)
-    cnoreabbrev sl SL
+    if !exists(":SL")
+      command! -nargs=? SL call SL(<f-args>)
+      cnoreabbrev sl SL
+    endif
   endif "}}}
   if has('win32') "{{{
     set runtimepath^=$HOME/.vim
