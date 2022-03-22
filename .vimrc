@@ -91,10 +91,10 @@ if exists('*strftime')
   inoremap <expr> <F5> strftime(g:changelog_dateformat)
 endif
 function g:ToggleJcuken()
-  if &keymap=="russian-jcukenwin"
-    set keymap=
-  else
+  if &keymap!="russian-jcukenwin"
     set keymap=russian-jcukenwin
+  else
+    set keymap&
   endif
 endfunction
 inoremap <C-r> <Esc>:call ToggleJcuken()<CR>a
