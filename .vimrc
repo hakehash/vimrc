@@ -75,6 +75,9 @@ if has('eval') "{{{
   packadd! killersheep
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
   let g:loaded_matchparen=1
+  if has('patch-7.3.32')
+    let g:plugin_skk_disable=1
+  endif
   let g:python_recommended_style=0      " ~/.vim/ftplugin/python.vim
   let g:rst_style=1
   let g:tex_conceal="bdmg"
@@ -90,13 +93,13 @@ noremap <F3> n
 if exists('*strftime')
   inoremap <expr> <F5> strftime(g:changelog_dateformat)
 endif
-function g:ToggleJcuken()
+function g:ToggleJcuken() "{{{
   if &keymap!="russian-jcukenwin"
     set keymap=russian-jcukenwin
   else
     set keymap&
   endif
-endfunction
+endfunction "}}}
 inoremap <C-r> <Esc>:call ToggleJcuken()<CR>a
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
