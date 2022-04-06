@@ -47,6 +47,7 @@ if !has('nvim') "{{{
     set t_ut=
   endif "}}}
   source ~/.exrc
+  set helplang=ja,en,ru
 else
   silent! source ~/.exrc
 endif "}}}
@@ -152,7 +153,6 @@ if has('folding')
   set foldmethod=syntax
 endif
 set helpheight=50
-set helplang=ja,en,ru
 set hidden
 set incsearch
 set keywordprg=:help
