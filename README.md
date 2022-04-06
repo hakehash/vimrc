@@ -58,12 +58,12 @@ Copy **.nanorc** to your home directory.
 ### for Emacs users
 Use [Vim](https://github.com/vim/vim).
 
-    sudo apt install libgnutls28-dev libncurses-dev libxpm-dev libxaw7-dev libgif-dev libtiff-dev ncurses-term
-    curl -O http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-27.2.tar.xz
-    tar xf emacs-27.2.tar.xz
-    cd emacs-27.2
+    sudo apt install libgnutls28-dev libncurses-dev libxpm-dev libxaw7-dev libgif-dev libtiff-dev libgccjit-10-dev ncurses-term
+    curl -O http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-28.1.tar.xz
+    tar xf emacs-28.1.tar.xz
+    cd emacs-28.1
     ./autogen.sh
-    ./configure --with-mailutils --with-x-toolkit=lucid
+    ./configure --with-mailutils --with-x-toolkit=lucid --with-native-compilation
     make
     sudo make install
     TERM=xterm-direct emacs -nw
