@@ -170,7 +170,9 @@ endif
 set shiftround
 set shortmess+=A
 set shortmess-=Ss
-set showbreak=>\ 
+if has('linebreak')
+  set showbreak=>\ 
+endif
 set showcmd
 set smartcase
 set smarttab
