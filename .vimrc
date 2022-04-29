@@ -169,7 +169,8 @@ if has('mouse')
 endif
 set shiftround
 set shortmess+=A
-set shortmess-=Ss
+set shortmess-=S
+set shortmess-=s
 if has('linebreak')
   set showbreak=>\ 
 endif
