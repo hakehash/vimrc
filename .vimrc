@@ -137,7 +137,7 @@ else
 endif
 set concealcursor=
 set conceallevel=2
-set cpoptions=aABceFsn
+set cpoptions+=n
 if has('cryptv')
   if has('patch-7.4.399')
     set cryptmethod=blowfish2
