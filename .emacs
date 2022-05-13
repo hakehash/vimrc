@@ -1,3 +1,6 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 (setq visible-bell t)
+(require 'skk-setup)
+(setq skk-use-azik t)
+(setq skk-azik-keyboard-type 'us101)
