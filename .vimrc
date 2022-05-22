@@ -73,8 +73,9 @@ if has('syntax') "{{{
   filetype plugin indent on
 endif "}}}
 if has('eval') "{{{
-  packadd! killersheep
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
+  let g:html_indent_script1 = "auto"    " ~/.vim/ftplugin/html.vim
+  let g:html_indent_style1 = "auto"
   let g:loaded_matchparen=1
   if has('patch-7.3.32')
     let g:plugin_skk_disable=1
