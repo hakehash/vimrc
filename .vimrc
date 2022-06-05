@@ -75,7 +75,7 @@ if has('syntax') "{{{
 endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
-  let g:eskk_use_azik=0
+  let g:eskk_use_azik=1
   let g:eskk_azik_keyboard_type="us101"
   let g:html_indent_script1 = "auto"    " ~/.vim/ftplugin/html.vim
   let g:html_indent_style1 = "auto"
@@ -92,9 +92,9 @@ if has('eval') "{{{
 endif "}}}
 augroup EskkInit "{{{
   autocmd!
-  autocmd User eskk-initialize-post call s:eskk_initial_pre()
+  autocmd User eskk-initialize-post call s:eskk_initial_post()
 augroup END "}}}
-function! s:eskk_initial_pre() abort "{{{
+function! s:eskk_initial_post() abort "{{{
   if g:eskk_use_azik
     EskkUnmap -type=mode:hira:toggle-kata q
     EskkUnmap -type=mode:hira:q-key q
