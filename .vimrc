@@ -59,7 +59,7 @@ if executable('factor') "{{{
 endif "}}}
 if has('syntax') "{{{
   syntax enable
-  augroup CursorLineNumHighlight
+  augroup HighlightTuning
     autocmd!
     autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight ColorColumn ctermbg=lightgrey
@@ -75,6 +75,8 @@ if has('syntax') "{{{
 endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
+  let g:eskk_use_azik=0
+  let g:eskk_azik_keyboard_type="us101"
   let g:html_indent_script1 = "auto"    " ~/.vim/ftplugin/html.vim
   let g:html_indent_style1 = "auto"
   let g:loaded_matchparen=1
@@ -88,6 +90,37 @@ if has('eval') "{{{
   let g:tex_fold_enabled=1
   let g:vimsyn_folding="af"
 endif "}}}
+augroup EskkInit "{{{
+  autocmd!
+  autocmd User eskk-initialize-post call s:eskk_initial_pre()
+augroup END "}}}
+function! s:eskk_initial_pre() abort "{{{
+  if g:eskk_use_azik
+    EskkUnmap -type=mode:hira:toggle-kata q
+    EskkUnmap -type=mode:hira:q-key q
+    EskkUnmap -type=mode:kata:toggle-kata q
+    EskkUnmap -type=mode:kata:q-key q
+    EskkUnmap -type=mode:hankata:toggle-kata q
+    EskkUnmap -type=mode:hankata:q-key q
+    EskkUnmap -type=sticky ;
+    if g:eskk_azik_keyboard_type=="jp106"
+      EskkMap -type=mode:hira:toggle-kata @
+      EskkMap -type=mode:hira:q-key @
+      EskkMap -type=mode:kata:toggle-kata @
+      EskkMap -type=mode:kata:q-key @
+      EskkMap -type=mode:hankata:toggle-kata @
+      EskkMap -type=mode:hankata:q-key @
+    endif
+    if g:eskk_azik_keyboard_type=="us101"
+      EskkMap -type=mode:hira:toggle-kata [
+      EskkMap -type=mode:hira:q-key [
+      EskkMap -type=mode:kata:toggle-kata [
+      EskkMap -type=mode:kata:q-key [
+      EskkMap -type=mode:hankata:toggle-kata [
+      EskkMap -type=mode:hankata:q-key [
+    endif
+  endif
+endfunction "}}}
 "   map {{{
 noremap Y y$
 noremap ; :
