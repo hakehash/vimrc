@@ -75,3 +75,4 @@ Japanese Vim Documents:  [https://github.com/vim-jp/vimdoc-ja](https://github.co
 
 Russian Vim Documents: [https://sourceforge.net/projects/ruvim2/](https://sourceforge.net/projects/ruvim2/)
 
+eskk.vim: [https://github.com/vim-skk/eskk.vim](https://github.com/vim-skk/eskk.vim)
