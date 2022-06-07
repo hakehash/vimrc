@@ -101,10 +101,10 @@ function! s:eskk_initial_pre() abort "{{{
   if g:eskk_use_azik "{{{
     let t = eskk#table#new('rom_to_hira*', 'rom_to_hira') "{{{
     call t.add_map('x[', '「')
-    call t.add_map('xzh', '←')
-    call t.add_map('xzj', '↓')
-    call t.add_map('xzk', '↑')
-    call t.add_map('xzl', '→')
+    call t.add_map('xxh', '←')
+    call t.add_map('xxj', '↓')
+    call t.add_map('xxk', '↑')
+    call t.add_map('xxl', '→')
     call t.add_map(':', 'ー')
     call t.add_map('a', 'あ')
     call t.add_map('i', 'い')
@@ -657,10 +657,10 @@ function! s:eskk_initial_pre() abort "{{{
     call eskk#register_mode_table('hira', t) "}}}
     let t = eskk#table#new('rom_to_kata*', 'rom_to_kata') "{{{
     call t.add_map('x[', '「')
-    call t.add_map('xzh', '←')
-    call t.add_map('xzj', '↓')
-    call t.add_map('xzk', '↑')
-    call t.add_map('xzl', '→')
+    call t.add_map('xxh', '←')
+    call t.add_map('xxj', '↓')
+    call t.add_map('xxk', '↑')
+    call t.add_map('xxl', '→')
     call t.add_map(':', 'ー')
     call t.add_map('a', 'ア')
     call t.add_map('i', 'イ')
