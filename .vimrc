@@ -1229,8 +1229,7 @@ function! s:eskk_initial_post() abort "{{{
       EskkMap -type=mode:kata:q-key @
       EskkMap -type=mode:hankata:toggle-kata @
       EskkMap -type=mode:hankata:q-key @
-    endif
-    if g:eskk_azik_keyboard_type=="us101"
+    elseif g:eskk_azik_keyboard_type=="us101"
       EskkMap -type=mode:hira:toggle-kata [
       EskkMap -type=mode:hira:q-key [
       EskkMap -type=mode:kata:toggle-kata [
@@ -1321,6 +1320,7 @@ if has('mouse')
     set mouse=ch
   endif
 endif
+set regexpengine=1
 set shiftround
 set shortmess+=A
 set shortmess-=S
