@@ -3,6 +3,7 @@
 (display-time)
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
+(setq make-backup-files nil)
 (setq visible-bell t)
 (require 'skk-setup)
 (setq skk-use-azik t)
