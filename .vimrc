@@ -1247,7 +1247,7 @@ noremap <F3> n
 if exists('*strftime')
   inoremap <expr> <F5> strftime(g:changelog_dateformat)
 endif
-function g:ToggleJcuken() "{{{
+function! g:ToggleJcuken() "{{{
   if &keymap!="russian-jcukenwin"
     set keymap=russian-jcukenwin
   else
