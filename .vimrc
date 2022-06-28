@@ -493,7 +493,7 @@ function! s:eskk_initial_pre() abort "{{{
     call t.add_map('tyw', 'ちぇい')
     call t.add_map('typ', 'ちょう')
     call t.add_map('cq', 'ちゃい')
-    call t.add_map('ch', 'ちゅゃう')
+    call t.add_map('ch', 'ちゅう')
     call t.add_map('cw', 'ちぇい')
     call t.add_map('cp', 'ちょう')
     call t.add_map('nyq', 'にゃい')
