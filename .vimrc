@@ -94,7 +94,9 @@ if has('eval') "{{{
     autocmd!
     autocmd User eskk-initialize-pre call s:eskk_initial_pre()
     autocmd User eskk-initialize-post call s:eskk_initial_post()
-    autocmd User eskk-enable-post lnoremap <buffer> l <Plug>(eskk:disable)
+    if !g:eskk_use_azik
+      autocmd User eskk-enable-post lnoremap <buffer> l <Plug>(eskk:disable)
+    endif
   augroup END "}}}
   function! s:eskk_initial_pre() abort "{{{
     if g:eskk_use_azik "{{{
