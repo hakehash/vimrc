@@ -63,13 +63,15 @@ if has('syntax') "{{{
   augroup HighlightTuning
     autocmd!
     autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight ColorColumn ctermbg=lightgrey
+    autocmd ColorScheme * highlight ColorColumn ctermbg=LightGrey
     autocmd ColorScheme * highlight Conceal ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLine ctermbg=NONE cterm=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow guifg=Yellow
     autocmd ColorScheme * highlight EndOfBuffer ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight Folded ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight Identifier ctermfg=LightMagenta guifg=LightMagenta
     autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
+    autocmd ColorScheme * highlight Special ctermfg=LightRed guifg=LightRed
   augroup END
   colorscheme industry
   filetype plugin indent on
