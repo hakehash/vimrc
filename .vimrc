@@ -1261,8 +1261,8 @@ if has('keymap') "{{{
       set keymap&
     endif
   endfunction
+  inoremap <C-r> <Esc>:call ToggleJcuken()<CR>a
 endif "}}}
-inoremap <C-r> <Esc>:call ToggleJcuken()<CR>a
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
 inoremap { {}<LEFT>
