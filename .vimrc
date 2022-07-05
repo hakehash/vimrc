@@ -1227,6 +1227,8 @@ if has('eval') "{{{
       EskkUnmap -type=mode:hankata:toggle-kata q
       EskkUnmap -type=mode:hankata:q-key q
       EskkUnmap -type=sticky ;
+      EskkUnmap -type=phase:henkan-select:delete-from-dict X
+      EskkMap -type=phase:henkan-select:delete-from-dict <Del>
       if g:eskk#azik_keyboard_type=="jp106"
         EskkMap -type=mode:hira:toggle-kata @
         EskkMap -type=mode:hira:q-key @
