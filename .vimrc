@@ -78,8 +78,8 @@ if has('syntax') "{{{
 endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
-  let g:eskk_use_azik=1
-  let g:eskk_azik_keyboard_type="us101"
+  let g:eskk#use_azik=1
+  let g:eskk#azik_keyboard_type="us101"
   let g:html_indent_script1 = "auto"    " ~/.vim/ftplugin/html.vim
   let g:html_indent_style1 = "auto"
   let g:loaded_matchparen=1
@@ -96,12 +96,12 @@ if has('eval') "{{{
     autocmd!
     autocmd User eskk-initialize-pre call s:eskk_initial_pre()
     autocmd User eskk-initialize-post call s:eskk_initial_post()
-    if !g:eskk_use_azik
+    if !g:eskk#use_azik
       autocmd User eskk-enable-post lnoremap <buffer> l <Plug>(eskk:disable)
     endif
   augroup END "}}}
   function! s:eskk_initial_pre() abort "{{{
-    if g:eskk_use_azik "{{{
+    if g:eskk#use_azik "{{{
       let t = eskk#table#new('rom_to_hira*', 'rom_to_hira') "{{{
       call t.add_map('x[', '「')
       call t.add_map('xxh', '←')
@@ -1219,7 +1219,7 @@ if has('eval') "{{{
     endif "}}}
   endfunction "}}}
   function! s:eskk_initial_post() abort "{{{
-    if g:eskk_use_azik
+    if g:eskk#use_azik
       EskkUnmap -type=mode:hira:toggle-kata q
       EskkUnmap -type=mode:hira:q-key q
       EskkUnmap -type=mode:kata:toggle-kata q
@@ -1227,14 +1227,14 @@ if has('eval') "{{{
       EskkUnmap -type=mode:hankata:toggle-kata q
       EskkUnmap -type=mode:hankata:q-key q
       EskkUnmap -type=sticky ;
-      if g:eskk_azik_keyboard_type=="jp106"
+      if g:eskk#azik_keyboard_type=="jp106"
         EskkMap -type=mode:hira:toggle-kata @
         EskkMap -type=mode:hira:q-key @
         EskkMap -type=mode:kata:toggle-kata @
         EskkMap -type=mode:kata:q-key @
         EskkMap -type=mode:hankata:toggle-kata @
         EskkMap -type=mode:hankata:q-key @
-      elseif g:eskk_azik_keyboard_type=="us101"
+      elseif g:eskk#azik_keyboard_type=="us101"
         EskkMap -type=mode:hira:toggle-kata [
         EskkMap -type=mode:hira:q-key [
         EskkMap -type=mode:kata:toggle-kata [
