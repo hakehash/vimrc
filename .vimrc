@@ -78,6 +78,7 @@ if has('syntax') "{{{
 endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
+  let g:eskk#egg_like_newline=1
   let g:eskk#use_azik=1
   let g:eskk#azik_keyboard_type="us101"
   let g:html_indent_script1 = "auto"    " ~/.vim/ftplugin/html.vim
@@ -1785,10 +1786,13 @@ if has('eval') "{{{
     if g:eskk#use_azik
       EskkUnmap -type=mode:hira:toggle-kata q
       EskkUnmap -type=mode:hira:q-key q
+      EskkUnmap -type=mode:hira:l-key l
       EskkUnmap -type=mode:kata:toggle-kata q
       EskkUnmap -type=mode:kata:q-key q
+      EskkUnmap -type=mode:kata:l-key l
       EskkUnmap -type=mode:hankata:toggle-kata q
       EskkUnmap -type=mode:hankata:q-key q
+      EskkUnmap -type=mode:hankata:l-key l
       EskkUnmap -type=sticky ;
       EskkUnmap -type=phase:henkan-select:delete-from-dict X
       EskkMap -type=phase:henkan-select:delete-from-dict <C-x>

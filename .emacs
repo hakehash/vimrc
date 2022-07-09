@@ -6,6 +6,7 @@
 (setq make-backup-files nil)
 (setq visible-bell t)
 (require 'skk-setup)
+(setq skk-egg-like-newline t)
 (setq skk-use-azik t)
 (setq skk-azik-keyboard-type 'us101)
 (add-to-list 'load-path "~/evil")
