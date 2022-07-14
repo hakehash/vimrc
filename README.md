@@ -11,7 +11,7 @@ If you do not have [Vim](https://github.com/vim/vim) yet, you can install it by 
     git clone https://github.com/vim/vim.git
     cd vim
     ./configure CFLAGS=-fPIC --with-features=huge --enable-multibyte --with-x --enable-gui=gtk3 --enable-fail-if-missing
-    make && sudo make install
+    make -j$(nproc) && sudo make install
 
 If you do not need GUI environment (e.g. build on Raspberry Pi):
 
@@ -19,7 +19,7 @@ If you do not need GUI environment (e.g. build on Raspberry Pi):
     git clone https://github.com/vim/vim.git
     cd vim
     ./configure CFLAGS=-fPIC --with-features=huge --enable-multibyte --without-x --disable-gui --enable-fail-if-missing
-    make && sudo make install
+    make -j$(nproc) && sudo make install
 
 And then, copy **.exrc** and **.vimrc** to your home directory.
 
@@ -64,7 +64,7 @@ Use [Vim](https://github.com/vim/vim).
     cd emacs-28.1
     ./autogen.sh
     ./configure --with-mailutils --with-x-toolkit=lucid --with-native-compilation
-    make
+    make -j$(nproc)
     sudo make install
     TERM=xterm-direct emacs -nw
 
