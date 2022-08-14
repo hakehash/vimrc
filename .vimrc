@@ -58,6 +58,10 @@ endif "}}}
 if executable('factor') "{{{
   command! -nargs=1 Pf let @+=substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g") | echomsg expand(@+)
 endif "}}}
+augroup ScratchBuffer "{{{
+  autocmd!
+  autocmd StdinReadPre * setlocal buftype=nofile bufhidden=hide noswapfile
+augroup END "}}}
 if has('syntax') "{{{
   syntax enable
   augroup HighlightTuning
@@ -1798,7 +1802,7 @@ if has('eval') "{{{
       EskkUnmap -type=mode:hankata:l-key l
       EskkUnmap -type=sticky ;
       EskkUnmap -type=phase:henkan-select:delete-from-dict X
-      EskkMap -type=phase:henkan-select:delete-from-dict <C-x>
+      EskkMap -type=phase:henkan-select:delete-from-dict <C-y>
       if g:eskk#azik_keyboard_type=="jp106"
         EskkMap -type=mode:hira:toggle-kata @
         EskkMap -type=mode:hira:q-key @
