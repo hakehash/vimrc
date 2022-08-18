@@ -109,6 +109,7 @@ if has('eval') "{{{
     if g:eskk#use_azik "{{{
       let t = eskk#table#new('rom_to_hira*', 'rom_to_hira') "{{{
       call t.add_map('x[', '「')
+      call t.add_map('_', '「')
       call t.add_map('xxh', '←')
       call t.add_map('xxj', '↓')
       call t.add_map('xxk', '↑')
@@ -669,6 +670,7 @@ if has('eval') "{{{
       call eskk#register_mode_table('hira', t) "}}}
       let t = eskk#table#new('rom_to_kata*', 'rom_to_kata') "{{{
       call t.add_map('x[', '「')
+      call t.add_map('_', '「')
       call t.add_map('xxh', '←')
       call t.add_map('xxj', '↓')
       call t.add_map('xxk', '↑')
@@ -1229,6 +1231,7 @@ if has('eval') "{{{
       call eskk#register_mode_table('kata', t) "}}}
       let t = eskk#table#new('rom_to_hankata*', 'rom_to_hankata') "{{{
       call t.add_map('x[', '｢')
+      call t.add_map('_', '「')
       call t.add_map('xxh', '←')
       call t.add_map('xxj', '↓')
       call t.add_map('xxk', '↑')
