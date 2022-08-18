@@ -83,7 +83,7 @@ endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
   let g:eskk#egg_like_newline=1
-  let g:eskk#use_azik=0
+  let g:eskk#use_azik=1
   let g:eskk#azik_keyboard_type="us101"
   let g:html_indent_script1 = "auto"    " ~/.vim/ftplugin/html.vim
   let g:html_indent_style1 = "auto"
@@ -110,6 +110,7 @@ if has('eval') "{{{
       let t = eskk#table#new('rom_to_hira*', 'rom_to_hira') "{{{
       call t.add_map('x[', '「')
       call t.add_map('_', '「')
+      call t.add_map('z_', '『')
       call t.add_map('xxh', '←')
       call t.add_map('xxj', '↓')
       call t.add_map('xxk', '↑')
@@ -671,6 +672,7 @@ if has('eval') "{{{
       let t = eskk#table#new('rom_to_kata*', 'rom_to_kata') "{{{
       call t.add_map('x[', '「')
       call t.add_map('_', '「')
+      call t.add_map('z_', '『')
       call t.add_map('xxh', '←')
       call t.add_map('xxj', '↓')
       call t.add_map('xxk', '↑')
@@ -1232,7 +1234,7 @@ if has('eval') "{{{
       let t = eskk#table#new('rom_to_hankata*', 'rom_to_hankata') "{{{
       call t.add_map('x[', '｢')
       call t.add_map('_', '｢')
-      call t.add_map('z_', '')
+      call t.add_map('z_', '『')
       call t.add_map('xxh', '←')
       call t.add_map('xxj', '↓')
       call t.add_map('xxk', '↑')
