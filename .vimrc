@@ -111,6 +111,14 @@ if has('eval') "{{{
       call t.add_map('x[', '「')
       call t.add_map('_', '「')
       call t.add_map('z_', '『')
+      call t.add_map('z(', '（')
+      call t.add_map('z)', '）')
+      call t.add_map('z{', '【')
+      call t.add_map('z}', '】')
+      call t.add_map('z ', '　')
+      call t.add_map('z*', '※')
+      call t.add_map('z0', '○')
+      call t.add_map('z@', '◎')
       call t.add_map('xxh', '←')
       call t.add_map('xxj', '↓')
       call t.add_map('xxk', '↑')
@@ -673,6 +681,14 @@ if has('eval') "{{{
       call t.add_map('x[', '「')
       call t.add_map('_', '「')
       call t.add_map('z_', '『')
+      call t.add_map('z(', '（')
+      call t.add_map('z)', '）')
+      call t.add_map('z{', '【')
+      call t.add_map('z}', '】')
+      call t.add_map('z ', '　')
+      call t.add_map('z*', '※')
+      call t.add_map('z0', '○')
+      call t.add_map('z@', '◎')
       call t.add_map('xxh', '←')
       call t.add_map('xxj', '↓')
       call t.add_map('xxk', '↑')
@@ -1808,7 +1824,7 @@ if has('eval') "{{{
       EskkUnmap -type=mode:hankata:l-key l
       EskkUnmap -type=sticky ;
       EskkUnmap -type=phase:henkan-select:delete-from-dict X
-      EskkMap -type=phase:henkan-select:delete-from-dict <C-y>
+      EskkMap -type=phase:henkan-select:delete-from-dict <M-x>
       if g:eskk#azik_keyboard_type=="jp106"
         EskkMap -type=mode:hira:toggle-kata @
         EskkMap -type=mode:hira:q-key @
