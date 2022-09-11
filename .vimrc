@@ -1895,7 +1895,7 @@ else
   set clipboard=unnamed
 endif
 if has('syntax')
-  set colorcolumn=+1
+  let &colorcolumn='+'.join(range(1,256),',+')
 endif
 set concealcursor=
 set conceallevel=2
