@@ -56,7 +56,7 @@ Copy **.nanorc** to your home directory.
     cp .nanorc ~
 
 ### for Emacs users
-Use [Vim](https://github.com/vim/vim).
+I like [Vim](https://github.com/vim/vim) but my employer restricts to use [Vim](https://github.com/vim/vim) so I started to use Emacs. As a casual user of Emacs, I install only 3 plugins - [ddskk](https://github.com/skk-dev/ddskk), [evil](https://github.com/emacs-evil/evil) and [evil-numbers](https://github.com/cofi/evil-numbers).
 
     sudo apt install libgnutls28-dev libncurses-dev libxpm-dev libxaw7-dev libgif-dev libtiff-dev libgccjit-10-dev ncurses-term
     curl -O http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-28.1.tar.xz
