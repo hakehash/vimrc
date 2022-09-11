@@ -12,6 +12,8 @@
 (setq evil-undo-system 'undo-redo)
 (require 'evil)
 (evil-mode 1)
+(define-key evil-motion-state-map (kbd ";") 'evil-ex)
+(define-key evil-motion-state-map (kbd ":") 'evil-repeat-find-char)
 (require 'evil-numbers)
 (define-key evil-normal-state-map (kbd "+") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
