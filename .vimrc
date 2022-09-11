@@ -1894,6 +1894,9 @@ if has('unnamedplus')
 else
   set clipboard=unnamed
 endif
+if has('syntax')
+  set colorcolumn=+1
+endif
 set concealcursor=
 set conceallevel=2
 set cpoptions+=n
