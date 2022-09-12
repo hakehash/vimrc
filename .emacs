@@ -17,3 +17,6 @@
 (require 'evil-numbers)
 (define-key evil-normal-state-map (kbd "+") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt)
+(when (eq system-type 'windows-nt)
+  (cd (substitute-in-file-name "${USERPROFILE}/Documents"))
+)
