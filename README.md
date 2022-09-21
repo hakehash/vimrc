@@ -12,6 +12,8 @@ If you do not have [Vim](https://github.com/vim/vim) yet, you can install it by 
     cd vim
     ./configure CFLAGS=-fPIC --with-features=huge --enable-multibyte --with-x --enable-gui=gtk3 --enable-fail-if-missing
     make -j$(nproc) && sudo make install
+    cd /usr/local/bin
+    sudo ln -s vim vi
 
 If you do not need GUI environment (e.g. build on Raspberry Pi):
 
