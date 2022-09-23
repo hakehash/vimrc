@@ -1948,8 +1948,10 @@ set spelllang=en,cjk
 set nostartofline
 set noswapfile
 set title
-set timeoutlen=500                      " $VIMRUNTIME/keymap/korean.vim
-set ttimeoutlen=0
+set timeout
+set timeoutlen=400                      " $VIMRUNTIME/keymap/korean.vim
+set ttimeout
+set ttimeoutlen=100
 if has('persistent_undo')
   set undodir=~/tmp,~/
   set noundofile
