@@ -4,6 +4,7 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 (setq make-backup-files nil)
+(setq quail-japanese-use-double-n t)
 (setq visible-bell t)
 (require 'skk-setup)
 (setq skk-egg-like-newline t)
