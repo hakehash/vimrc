@@ -79,6 +79,7 @@ if has('syntax') "{{{
   augroup END
   colorscheme industry
   filetype plugin indent on
+  let &colorcolumn='+'.join(range(1,256),',+')
 endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
@@ -1896,9 +1897,6 @@ if has('unnamedplus')
   set clipboard=unnamedplus
 else
   set clipboard=unnamed
-endif
-if has('syntax')
-  let &colorcolumn='+'.join(range(1,256),',+')
 endif
 set concealcursor=
 set conceallevel=2
