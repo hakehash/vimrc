@@ -15,6 +15,15 @@ If you do not have [Vim](https://github.com/vim/vim) yet, you can install it by 
     cd /usr/local/bin
     sudo ln -s vim vi
 
+To share clipboard between Windows and Vim on WSL2, you need [VcXsrv](https://sourceforge.net/projects/vcxsrv/) and add following environment variables to .bashrc:
+
+    export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+    export LIBGL_ALWAYS_INDIRECT=1
+
+And to play [killersheep](https://github.com/vim/killersheep), you also need [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/Ports/Windows/Support/) and add following to .bashrc:
+
+    export PULSE_SERVER=tcp:$(grep nameserver /etc/resolv.conf | awk '{print $2}')
+
 If you do not need GUI environment (e.g. build on Raspberry Pi):
 
     sudo apt install build-essential gettext libncurses-dev libcanberra-dev
