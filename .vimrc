@@ -13,7 +13,7 @@ if !has('nvim') "{{{
   endif "}}}
   if &term=~"^xterm" "{{{
     let &t_Co = 256
-    let &t_te.="\e[0 q"
+    let &t_te.="\e[0 q\e]12;white\x7"
     let &t_ti.="\e[2 q"
     let &t_EI.="\e[2 q"
     let &t_SI.="\e[6 q"

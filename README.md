@@ -18,7 +18,7 @@ If you do not have [Vim](https://github.com/vim/vim) yet, you can install it by 
 To share clipboard between Windows and Vim on WSL2, you need [VcXsrv](https://sourceforge.net/projects/vcxsrv/) and add following environment variables to .bashrc:
 
     export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
-    export LIBGL_ALWAYS_INDIRECT=1
+    export LIBGL_ALWAYS_INDIRECT=0
 
 And to play [killersheep](https://github.com/vim/killersheep), you also need [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/Ports/Windows/Support/) and add following to .bashrc:
 
