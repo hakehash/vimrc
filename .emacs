@@ -1,6 +1,7 @@
 (setq display-time-interval 1)
 (setq display-time-format "%T")
 (display-time)
+(setq electric-indent-mode nil)
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 (setq make-backup-files nil)
