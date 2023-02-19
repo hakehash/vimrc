@@ -1,3 +1,5 @@
+(setq column-number-mode t)
+(setq line-number-mode t)
 (setq display-time-interval 1)
 (setq display-time-format "%T")
 (display-time)
