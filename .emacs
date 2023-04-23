@@ -49,6 +49,9 @@
   (cd (substitute-in-file-name "${USERPROFILE}/Documents"))
   )
 (set-language-environment 'Japanese)
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 ;; (setq quail-japanese-transliteration-rules
 ;; '(("b" "あ") ("k" "い") ("j" "う") ("U" "え") ("J" "お")
 ;;   ("s" "か") (";" "き") ("h" "く") ("w" "け") ("x" "こ")
