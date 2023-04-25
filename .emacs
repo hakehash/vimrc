@@ -27,7 +27,7 @@
 (setq skk-egg-like-newline t)
 (setq skk-search-katakana t)
 (setq skk-use-azik t)
-(if (string-match "^MPC" (system-name))
+(if (string-match "^\\(MPC\\|pomera$\\)" (system-name))
   (setq skk-azik-keyboard-type 'jp106)
   (setq skk-azik-keyboard-type 'us101)
   )
