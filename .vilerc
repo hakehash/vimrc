@@ -1,0 +1,3 @@
+source ~/.exrc
+map ; :
+map : ;
