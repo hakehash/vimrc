@@ -1870,6 +1870,8 @@ inoremap [ []<LEFT>
 inoremap { {}<LEFT>
 inoremap <Up> <C-o>gk
 inoremap <Down> <C-o>gj
+inoremap <Left> <C-g>U<Left>
+inoremap <Right> <C-g>U<Right>
 nnoremap <Up> gk
 nnoremap <Down> gj
 vnoremap <C-a> <C-a>gv
