@@ -1,5 +1,6 @@
 source ~/.exrc
 set cedit=
 set filec=\	
+set nolist
 set matchtime=1
 set searchincr
