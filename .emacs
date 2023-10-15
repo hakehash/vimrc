@@ -20,7 +20,7 @@
 (setq visible-bell t)
 (setq windmove-wrap-around t)
 (set-language-environment 'Japanese)
-(setq default-input-method "cyrillic-jcuken")
+(setq default-input-method "russian-computer")
 (require 'skk-setup)
 (setq skk-auto-insert-paren t)
 (setq skk-dcomp-activate t)
