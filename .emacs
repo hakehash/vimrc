@@ -20,16 +20,15 @@
 (setq visible-bell t)
 (setq windmove-wrap-around t)
 (set-language-environment 'Japanese)
-(setq default-input-method "russian-computer")
 (quail-define-package
   "russian-computer-oadg106" "Russian" "RU" nil
   "ЙЦУКЕН Russian computer layout for OADG 106 keyboard"
   nil t t t t nil nil nil nil nil t)
 
-;; 1! 2" 3№ 4; 5% 6: 7? 8* 9( 0) -_ =+ \|
+;; 1! 2" 3№ 4; 5% 6: 7? 8( 9) 0 -_ =+ \|
 ;;  Й Ц У К Е Н Г Ш Щ З х ъ
 ;;   Ф Ы В А П Р О Л Д ж э
-;;    Я Ч С М И Т Ь б ю
+;;    Я Ч С М И Т Ь б ю .,
 
 (quail-define-rules
   ("1" ?1)
@@ -137,7 +136,10 @@
 ;; (setq skk-use-kana-keyboard t)
 ;; (setq skk-kanagaki-keyboard-type '106-jis)
 (if (string-match "^\\(MPC\\|pomera$\\)" (system-name))
-  (setq skk-azik-keyboard-type 'jp106)
+  (progn
+    (setq default-input-method "russian-computer-oadg106")
+    (setq skk-azik-keyboard-type 'jp106))
+  (setq default-input-method "russian-computer")
   (setq skk-azik-keyboard-type 'us101)
   )
 (if (>= emacs-major-version 26)
