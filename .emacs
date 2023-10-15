@@ -25,7 +25,7 @@
   "ЙЦУКЕН Russian computer layout for OADG 106 keyboard"
   nil t t t t nil nil nil nil nil t)
 
-;; 1! 2" 3№ 4; 5% 6: 7? 8( 9) 0 -_ =+ \|
+;; 1! 2" 3№ 4; 5% 6: 7? 8( 9) 0 -_ =+ \/
 ;;  Й Ц У К Е Н Г Ш Щ З х ъ
 ;;   Ф Ы В А П Р О Л Д ж э
 ;;    Я Ч С М И Т Ь б ю .,
