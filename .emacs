@@ -19,6 +19,11 @@
 (setq quail-japanese-use-double-n t)
 (setq visible-bell t)
 (setq windmove-wrap-around t)
+(setq zoneinfo-style-world-list
+  '(("Europe/London" "London")
+    ("Europe/Rome" "Rome")
+    ("Europe/Moscow" "Moscow")
+    ("Asia/Tokyo" "Tokyo")))
 (set-language-environment 'Japanese)
 (quail-define-package
   "russian-computer-oadg106" "Russian" "RU" nil
@@ -52,8 +57,11 @@
 (setq skk-auto-insert-paren t)
 (setq skk-dcomp-activate t)
 (setq skk-dcomp-multiple-activate nil)
+(setq skk-delete-implies-kakutei nil)
 (setq skk-egg-like-newline t)
+(setq skk-henkan-strict-okuri-precedence t)
 (setq skk-search-katakana nil)
+(setq skk-show-annotation t)
 (setq skk-use-azik t)
 ;; (setq skk-use-kana-keyboard t)
 ;; (setq skk-kanagaki-keyboard-type '106-jis)
