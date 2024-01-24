@@ -24,6 +24,9 @@
     ("Europe/Rome" "Rome")
     ("Europe/Moscow" "Moscow")
     ("Asia/Tokyo" "Tokyo")))
+(setq legacy-style-world-list
+  '(("GMT0BST" "London")
+    ("JST-9" "Tokyo")))
 (set-language-environment 'Japanese)
 (quail-define-package
   "russian-computer-oadg106" "Russian" "RU" nil
