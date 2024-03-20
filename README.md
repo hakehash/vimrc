@@ -63,9 +63,9 @@ Copy **.exrc** and **.elvisrc** to your home directory.
 
 ### for BusyBox vi users
 BustBox vi supports `$HOME/.exrc` since [2021-08-20](https://git.busybox.net/busybox/commit/?id=f9217cd235c2a139ae22cf549c7614724f1fc6cf).  
-Copy .exrc to your home directory.
+Copy and rename .exrc_busybox to your home directory.
 
-    cp .exrc ~
+    cp .exrc_busybox ~/.exrc
 
 ### for nano users
 Copy **.nanorc** to your home directory.
