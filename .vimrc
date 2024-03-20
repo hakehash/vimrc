@@ -17,7 +17,7 @@ if !has('nvim') "{{{
     let &t_EI.="\e[2 q"
     let &t_SI.="\e[6 q"
     let &t_SR.="\e[4 q"
-    let &t_vb ="[?5h$<100>[?5l"
+    let &t_vb ="\e[?5h$<100>\e[?5l"
   endif "}}}
   if executable('sl') && !has('gui_running') "{{{
     function! g:SL(...)
@@ -76,7 +76,9 @@ if has('syntax') "{{{
     autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
     autocmd ColorScheme * highlight Special ctermfg=LightRed guifg=LightRed
   augroup END
-  colorscheme industry
+  if filereadable(expand('$VIMRUNTIME/colors/industry.vim'))
+    colorscheme industry
+  endif
   filetype plugin indent on
   let &colorcolumn='+'.join(range(1,256),',+')
 endif "}}}
@@ -1894,8 +1896,10 @@ set nobackup
 if has('patch-7.4.793')
   set belloff=all
 endif
-set breakindent
-set breakindentopt=min:20,shift:-2,sbr
+if has('linebreak') && has('patch-7.4.338')
+  set breakindent
+  set breakindentopt=min:20,shift:-2,sbr
+endif
 if has('unnamedplus')
   set clipboard=unnamedplus
 else
@@ -1911,7 +1915,7 @@ if has('cryptv')
     set cryptmethod=blowfish
   endif
 endif
-if has('syntax')
+if has('syntax') && has('patch-8.1.2019')
   set cursorline
   set cursorlineopt=number
 endif
@@ -1926,7 +1930,9 @@ set hidden
 set incsearch
 set keywordprg=:help
 set laststatus=1
-set linebreak
+if has('linebreak')
+  set linebreak
+endif
 set listchars=tab:>-,trail:_
 set matchtime=1
 if has('mouse')
@@ -1936,7 +1942,9 @@ if has('mouse')
     set mouse=ch
   endif
 endif
-set regexpengine=1
+if has('patch-7.3.970')
+  set regexpengine=1
+endif
 set shiftround
 set shortmess+=A
 set shortmess-=S
@@ -1947,7 +1955,9 @@ endif
 set showcmd
 set smartcase
 set smarttab
-set softtabstop=-1
+if has('patch-7.3.693')
+  set softtabstop=-1
+endif
 set spelllang=en,cjk
 set nostartofline
 set noswapfile
