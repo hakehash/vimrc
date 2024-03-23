@@ -2,8 +2,8 @@ scriptencoding utf-8
 if has('vim_starting') && has('reltime') && !has('win32') "{{{
   augroup VimStart
     autocmd!
-    let g:startuptime = reltime()
-    autocmd VimEnter * let g:startuptime = reltime(g:startuptime) | echomsg 'startuptime: ' . reltimestr(g:startuptime)
+    let g:startuptime=reltime()
+    autocmd VimEnter * let g:startuptime=reltime(g:startuptime) | echomsg 'startuptime: ' . reltimestr(g:startuptime)
   augroup END
 endif "}}}
 if !has('nvim') "{{{
@@ -43,7 +43,7 @@ if !has('nvim') "{{{
   if has('win32') "{{{
     set runtimepath^=$HOME/.vim
     set runtimepath+=$HOME/.vim/after
-    let &packpath = &runtimepath
+    let &packpath=&runtimepath
     set t_ut=
   endif "}}}
   source ~/.exrc
@@ -85,12 +85,12 @@ endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
   let g:eskk#egg_like_newline=1
-  let g:eskk#enable_completion = 0
-  let g:eskk#keep_state = 1
+  let g:eskk#enable_completion=0
+  let g:eskk#keep_state=1
   let g:eskk#use_azik=1
   let g:eskk#azik_keyboard_type="us101"
-  let g:html_indent_script1 = "auto"    " ~/.vim/ftplugin/html.vim
-  let g:html_indent_style1 = "auto"
+  let g:html_indent_script1="auto"    " ~/.vim/ftplugin/html.vim
+  let g:html_indent_style1="auto"
   let g:loaded_matchparen=1
   if has('patch-7.3.32')
     let g:plugin_skk_disable=1
@@ -111,7 +111,7 @@ if has('eval') "{{{
   augroup END "}}}
   function! s:eskk_initial_pre() abort "{{{
     if g:eskk#use_azik "{{{
-      let t = eskk#table#new('rom_to_hira*', 'rom_to_hira') "{{{
+      let t=eskk#table#new('rom_to_hira*', 'rom_to_hira') "{{{
       call t.add_map('x[', '「')
       call t.add_map('_', '「')
       call t.add_map('z_', '『')
@@ -682,7 +682,7 @@ if has('eval') "{{{
       call t.add_map('dt', 'だち')
       call t.add_map('wr', 'われ')
       call eskk#register_mode_table('hira', t) "}}}
-      let t = eskk#table#new('rom_to_kata*', 'rom_to_kata') "{{{
+      let t=eskk#table#new('rom_to_kata*', 'rom_to_kata') "{{{
       call t.add_map('x[', '「')
       call t.add_map('_', '「')
       call t.add_map('z_', '『')
@@ -1253,7 +1253,7 @@ if has('eval') "{{{
       call t.add_map('dt', 'ダチ')
       call t.add_map('wr', 'ワレ')
       call eskk#register_mode_table('kata', t) "}}}
-      let t = eskk#table#new('rom_to_hankata*', 'rom_to_hankata') "{{{
+      let t=eskk#table#new('rom_to_hankata*', 'rom_to_hankata') "{{{
       call t.add_map('x[', '｢')
       call t.add_map('_', '｢')
       call t.add_map('z_', '『')
