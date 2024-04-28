@@ -73,7 +73,7 @@ Copy **.nanorc** to your home directory.
     cp .nanorc ~
 
 ### for Emacs users
-I like [Vim](https://github.com/vim/vim) but my employer restricts to use it so I started to use Emacs. As a casual user of Emacs, I install only 4 plugins - [ddskk](https://github.com/skk-dev/ddskk), [evil](https://github.com/emacs-evil/evil), [evil-numbers](https://github.com/cofi/evil-numbers) and [undo-fu](https://codeberg.org/ideasman42/emacs-undo-fu) (for Emacs 27 or earlier).
+I like [Vim](https://github.com/vim/vim) but my employer restricts to use it so I started to use Emacs. As a casual user of Emacs, I install only 4 plugins - [ddskk](https://github.com/skk-dev/ddskk), [evil](https://github.com/emacs-evil/evil), [evil-numbers](https://github.com/cofi/evil-numbers) and [undo-fu](https://codeberg.org/ideasman42/emacs-undo-fu) (for Emacs 27 or earlier). [goto-chg](https://github.com/emacs-evil/goto-chg) is also needed.
 
     sudo apt install libgnutls28-dev libncurses-dev libxpm-dev libxaw7-dev libgif-dev libtiff-dev libgccjit-10-dev ncurses-term
     curl -L -O http://ftpmirror.gnu.org/emacs/emacs-29.3.tar.xz
