@@ -76,11 +76,11 @@ Copy **.nanorc** to your home directory.
 I like [Vim](https://github.com/vim/vim) but my employer restricts to use it so I started to use Emacs. As a casual user of Emacs, I install only 4 plugins - [ddskk](https://github.com/skk-dev/ddskk), [evil](https://github.com/emacs-evil/evil), [evil-numbers](https://github.com/cofi/evil-numbers) and [undo-fu](https://codeberg.org/ideasman42/emacs-undo-fu) (for Emacs 27 or earlier).
 
     sudo apt install libgnutls28-dev libncurses-dev libxpm-dev libxaw7-dev libgif-dev libtiff-dev libgccjit-10-dev ncurses-term
-    curl -L -O http://ftpmirror.gnu.org/emacs/emacs-28.2.tar.xz
-    tar xf emacs-28.2.tar.xz
-    cd emacs-28.2
+    curl -L -O http://ftpmirror.gnu.org/emacs/emacs-29.3.tar.xz
+    tar xf emacs-29.3.tar.xz
+    cd emacs-29.3
     ./autogen.sh
-    ./configure --with-mailutils --with-x-toolkit=lucid --with-native-compilation
+    ./configure --with-pop --with-mailutils --with-x-toolkit=lucid --with-native-compilation
     make -j$(nproc)
     sudo make install
     TERM=xterm-direct emacs -nw
