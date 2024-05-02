@@ -24,9 +24,28 @@
     ("Europe/Rome" "Rome")
     ("Europe/Moscow" "Moscow")
     ("Asia/Tokyo" "Tokyo")))
-(setq legacy-style-world-list
-  '(("GMT0BST" "London")
-    ("JST-9" "Tokyo")))
+(defun fairfield (m d)
+  (setq y (elt (decode-time (current-time) "UTC0") 5))
+  (mod (+ (* 365 y) (floor y 4) (- (floor y 100)) (floor y 400) (floor (* 306 (+ m 1)) 10) d -428) 7))
+(setq mars (- 31 (fairfield 3 31)))
+(setq octe (- 31 (fairfield 10 31)))
+(setq m (elt (decode-time (current-time) "UTC0") 4))
+(setq d (elt (decode-time (current-time) "UTC0") 3))
+(setq h (elt (decode-time (current-time) "UTC0") 2))
+(if (or (< m 3)
+        (and (= m 3) (< d mars))
+        (and (= m 3) (= d mars) (< h 1))
+        (> m 10)
+        (and (= m 10) (> d octe))
+        (and (= m 10) (= d octe) (=> h 1)))
+  (setq legacy-style-world-list
+    '(("GMT0" "London")
+      ("GMT-3MSK" "Moscow")
+      ("JST-9" "Tokyo")))
+  (setq legacy-style-world-list
+    '(("GMT-1BST" "London")
+      ("GMT-3MSK" "Moscow")
+      ("JST-9" "Tokyo"))))
 (set-language-environment 'Japanese)
 (quail-define-package
   "russian-computer-oadg106" "Russian" "RU" nil
