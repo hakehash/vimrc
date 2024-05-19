@@ -108,6 +108,8 @@
     (setq evil-undo-system 'undo-fu)
     )
   )
+(setq evil-mode-line-format '(before . mode-line-front-space))
+(setq evil-normal-state-tag "")
 (setq evil-shift-width 2)
 (setq evil-want-C-w-in-emacs-state t)
 (require 'evil)
