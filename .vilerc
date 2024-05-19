@@ -1,3 +1,4 @@
 source ~/.exrc
 map ; :
 map : ;
+set ruler

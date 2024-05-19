@@ -1,2 +1,3 @@
 source ~/.exrc
+set ruler
 set undolevels=100

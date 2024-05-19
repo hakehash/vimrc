@@ -3,4 +3,5 @@ set cedit=
 set filec=\	
 set nolist
 set matchtime=1
+set ruler
 set searchincr

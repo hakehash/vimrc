@@ -1945,6 +1945,7 @@ endif
 if has('patch-7.3.970')
   set regexpengine=1
 endif
+set ruler
 set shiftround
 set shortmess+=A
 set shortmess-=S
