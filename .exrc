@@ -4,7 +4,6 @@ set flash
 set ignorecase
 set list
 set report=1
-set ruler
 set showmatch
 set showmode
 set shiftwidth=2
