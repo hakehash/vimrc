@@ -131,6 +131,8 @@
   )
 (when (eq window-system 'w32)
   (set-face-background 'default "Light Yellow"))
+(when (eq window-system nil)
+  (menu-bar-mode -1))
 (require 'server)
 (unless (server-running-p)
   (server-start))
