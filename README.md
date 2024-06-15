@@ -19,6 +19,13 @@ To share clipboard between Windows and Vim on WSL2, you need [VcXsrv](https://so
 
     export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
     export LIBGL_ALWAYS_INDIRECT=0
+    export LIBGL_ALWAYS_SOFTWARE=0
+
+If the /etc/resolv.conf is not contains valid IP address, use following instead:
+
+    export DISPLAY=$(ip route show | grep -i default | awk '{print $3}'):0
+    export LIBGL_ALWAYS_INDIRECT=0
+    export LIBGL_ALWAYS_SOFTWARE=0
 
 And to play [killersheep](https://github.com/vim/killersheep), you also need [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/Ports/Windows/Support/) and add following to .bashrc:
 
