@@ -47,7 +47,6 @@ if !has('nvim') "{{{
     set t_ut=
   endif "}}}
   source ~/.exrc
-  set helplang=ja,en,ru
 else
   silent! source ~/.exrc
 endif "}}}
@@ -1927,6 +1926,7 @@ if has('folding')
   set foldmethod=syntax
 endif
 set helpheight=50
+set helplang=ja,en,ru
 set hidden
 set incsearch
 set keywordprg=:help
@@ -1946,7 +1946,10 @@ endif
 if has('patch-7.3.970')
   set regexpengine=1
 endif
-set ruler
+if has('cmdline_info')
+  set ruler
+  set showcmd
+endif
 set shiftround
 set shortmess+=A
 set shortmess-=S
@@ -1954,7 +1957,6 @@ set shortmess-=s
 if has('linebreak')
   set showbreak=>\ 
 endif
-set showcmd
 set smartcase
 set smarttab
 if has('patch-7.3.693')

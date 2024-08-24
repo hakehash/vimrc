@@ -6,3 +6,4 @@ set cpoptions+=_
 set clipboard=unnamedplus
 set helplang=en
 set inccommand=split
+set laststatus=3
