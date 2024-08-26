@@ -74,6 +74,9 @@ if has('syntax') "{{{
     autocmd ColorScheme * highlight Identifier ctermfg=LightMagenta guifg=LightMagenta
     autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
     autocmd ColorScheme * highlight Special ctermfg=LightRed guifg=LightRed
+    autocmd ColorScheme * highlight Statusline ctermfg=LightGrey ctermbg=NONE
+    autocmd ColorScheme * highlight StatuslineNC ctermfg=DarkGrey ctermbg=NONE
+    autocmd ColorScheme * highlight VertSplit ctermfg=DarkGrey ctermbg=NONE
   augroup END
   if filereadable(expand('$VIMRUNTIME/colors/industry.vim'))
     colorscheme industry
@@ -1922,6 +1925,7 @@ endif
 set errorbells
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
+set fillchars+=stl:-,stlnc:-
 if has('folding')
   set foldmethod=syntax
 endif
@@ -1963,6 +1967,9 @@ if has('patch-7.3.693')
   set softtabstop=-1
 endif
 set spelllang=en,cjk
+if has('statusline')
+  set statusline=-
+endif
 set nostartofline
 set noswapfile
 set title
