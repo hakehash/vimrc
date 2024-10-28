@@ -1,3 +1,5 @@
+;; (require 'profiler)
+;; (profiler-start 'cpu)
 (global-font-lock-mode t)
 (add-hook 'tty-setup-hook
           '(lambda ()
@@ -42,7 +44,7 @@
         (and (= m 3) (= d mars) (< h 1))
         (> m 10)
         (and (= m 10) (> d octe))
-        (and (= m 10) (= d octe) (=> h 1)))
+        (and (= m 10) (= d octe) (>= h 1)))
   (setq legacy-style-world-list
     '(("GMT0" "London")
       ("GMT-3MSK" "Moscow")
@@ -137,6 +139,8 @@
 (unless (server-running-p)
   (server-start))
 (prefer-coding-system 'utf-8)
+;; (profiler-report)
+;; (profiler-stop)
 ;; (setq quail-japanese-transliteration-rules
 ;; (defvar skk-101-jisx6004-plain-rule-list
 ;; '(?b ("ア" . "あ") ?k ("イ" . "い") ?j ("ウ" . "う") ?U ("エ" . "え") ?J ("オ" . "お")
