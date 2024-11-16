@@ -89,6 +89,7 @@ if has('eval') "{{{
   let g:eskk#egg_like_newline=1
   let g:eskk#enable_completion=0
   let g:eskk#keep_state=1
+  let g:eskk#show_annotation=1
   let g:eskk#use_azik=1
   let g:eskk#azik_enable_precise_shift=0
   let g:eskk#azik_keyboard_type="us101"
