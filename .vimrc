@@ -46,7 +46,11 @@ if !has('nvim') "{{{
     let &packpath=&runtimepath
     set t_ut=
   endif "}}}
-  source ~/.exrc
+  if has('dos32') || has('dos16') "{{{
+    source ~/_exrc
+  else
+    source ~/.exrc
+  endif "}}}
 else
   silent! source ~/.exrc
 endif "}}}
