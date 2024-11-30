@@ -1913,8 +1913,10 @@ if has('unnamedplus')
 else
   set clipboard=unnamed
 endif
-set concealcursor=
-set conceallevel=2
+if has('conceal')
+  set concealcursor=
+  set conceallevel=2
+endif
 set cpoptions+=n
 if has('cryptv')
   if has('patch-7.4.399')
