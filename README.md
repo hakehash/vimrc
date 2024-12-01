@@ -1,5 +1,5 @@
 # vimrc
-My dotfiles of [Vim](https://github.com/vim/vim), [Neovim](https://github.com/neovim/neovim), nvi, elvis, and nano, which compatible with Cygwin and WSL.  
+My dotfiles of [Vim](https://github.com/vim/vim), [Neovim](https://github.com/neovim/neovim), [nvi](https://fossies.org/linux/privat/old/nvi-1.81.6.tar.gz/), elvis, and nano, which compatible with Cygwin and WSL.  
 There is no error detected even if you are using vim.tiny!  
 (Of course I strongly recommend you to use Huge version of Vim :)  
 
@@ -46,6 +46,8 @@ And then, copy **.exrc** and **.vimrc** to your home directory.
     cp .exrc .vimrc ~
     cd
     git clone https://github.com/hakehash/.vim
+
+If your Vim is running on DOS, rename **.vimrc** and **.exrc** to **_vimrc** and **_exrc** respectively.
 
 ### for Neovim users
 Copy **.config/nvim/init.vim**, **.exrc**, and **.vimrc** to your home directory.
