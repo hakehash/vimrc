@@ -80,8 +80,8 @@ if has('syntax') "{{{
     autocmd ColorScheme * highlight PmenuSbar ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight Special ctermfg=LightRed guifg=LightRed
     autocmd ColorScheme * highlight Statusline cterm=bold ctermfg=LightGrey ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight StatuslineNC ctermfg=DarkGrey ctermbg=NONE
-    autocmd ColorScheme * highlight VertSplit ctermfg=DarkGrey ctermbg=NONE
+    autocmd ColorScheme * highlight StatuslineNC cterm=NONE ctermfg=DarkGrey ctermbg=NONE
+    autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=DarkGrey ctermbg=NONE
   augroup END
   if filereadable(expand('$VIMRUNTIME/colors/industry.vim'))
     colorscheme industry
