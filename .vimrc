@@ -60,10 +60,10 @@ endif "}}}
 if executable('factor') "{{{
   command! -nargs=1 Pf let @+=substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g") | echomsg expand(@+)
 endif "}}}
-"augroup ScratchBuffer "{{{
-  "autocmd!
-  "autocmd StdinReadPre * setlocal buftype=nofile bufhidden=hide noswapfile
-"augroup END "}}}
+augroup ScratchBuffer "{{{
+  autocmd!
+  autocmd StdinReadPre * setlocal buftype=nofile bufhidden=hide noswapfile
+augroup END "}}}
 if has('syntax') "{{{
   syntax enable
   augroup HighlightTuning
