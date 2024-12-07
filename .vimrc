@@ -60,10 +60,10 @@ endif "}}}
 if executable('factor') "{{{
   command! -nargs=1 Pf let @+=substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g") | echomsg expand(@+)
 endif "}}}
-augroup ScratchBuffer "{{{
-  autocmd!
-  autocmd StdinReadPre * setlocal buftype=nofile bufhidden=hide noswapfile
-augroup END "}}}
+"augroup ScratchBuffer "{{{
+  "autocmd!
+  "autocmd StdinReadPre * setlocal buftype=nofile bufhidden=hide noswapfile
+"augroup END "}}}
 if has('syntax') "{{{
   syntax enable
   augroup HighlightTuning
@@ -100,7 +100,7 @@ if has('eval') "{{{
   let g:html_indent_script1="auto"    " ~/.vim/ftplugin/html.vim
   let g:html_indent_style1="auto"
   let g:loaded_matchparen=1
-  if has('patch-7.3.32')
+  if v:version > 703 || (v:version == 703 && has('patch32'))
     let g:plugin_skk_disable=1
   endif
   let g:python_recommended_style=0      " ~/.vim/ftplugin/python.vim
@@ -1954,7 +1954,7 @@ if has('mouse')
     set mouse=ch
   endif
 endif
-if has('patch-7.3.970')
+if v:version > 703 || (v:version == 703 && has('patch970'))
   set regexpengine=1
 endif
 if has('cmdline_info')
@@ -1970,7 +1970,7 @@ if has('linebreak')
 endif
 set smartcase
 set smarttab
-if has('patch-7.3.693')
+if v:version > 703 || (v:version == 703 && has('patch693'))
   set softtabstop=-1
 endif
 set spelllang=en,cjk
