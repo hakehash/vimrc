@@ -77,8 +77,9 @@ if has('syntax') "{{{
     autocmd ColorScheme * highlight Folded ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight Identifier ctermfg=LightMagenta guifg=LightMagenta
     autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
+    autocmd ColorScheme * highlight PmenuSbar ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight Special ctermfg=LightRed guifg=LightRed
-    autocmd ColorScheme * highlight Statusline ctermfg=LightGrey ctermbg=NONE
+    autocmd ColorScheme * highlight Statusline ctermfg=LightGrey ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight StatuslineNC ctermfg=DarkGrey ctermbg=NONE
     autocmd ColorScheme * highlight VertSplit ctermfg=DarkGrey ctermbg=NONE
   augroup END
