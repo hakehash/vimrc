@@ -69,7 +69,7 @@ if has('syntax') "{{{
   augroup HighlightTuning
     autocmd!
     autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight ColorColumn ctermbg=DarkGrey
+    autocmd ColorScheme * highlight ColorColumn ctermbg=DarkGrey guibg=DarkGrey
     autocmd ColorScheme * highlight Conceal ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLine ctermbg=NONE cterm=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow guifg=Yellow
