@@ -1,6 +1,6 @@
 scriptencoding utf-8
 if has('vim_starting') && has('reltime') && !has('win32') "{{{
-  augroup VimStart
+  augroup VimStartupTime
     autocmd!
     let g:startuptime=reltime()
     autocmd VimEnter * let g:startuptime=reltime(g:startuptime) | echomsg 'startuptime: ' . reltimestr(g:startuptime)
@@ -101,6 +101,10 @@ if has('eval') "{{{
   let g:html_indent_script1="auto"    " ~/.vim/ftplugin/html.vim
   let g:html_indent_style1="auto"
   let g:loaded_matchparen=1
+  augroup VimStartup
+    autocmd!
+    autocmd VimEnter * if expand('%') == "" | let g:loaded_netrw=1 | let g:loaded_netrwPlugin=1 | endif
+  augroup END
   if v:version > 703 || (v:version == 703 && has('patch32'))
     let g:plugin_skk_disable=1
   endif
@@ -1938,7 +1942,9 @@ if has('folding')
   set foldmethod=syntax
 endif
 set helpheight=50
-set helplang=ja,en,ru
+if has('multi_lang')
+  set helplang=ja,en,ru
+endif
 set hidden
 set incsearch
 set keywordprg=:help
