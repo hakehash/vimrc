@@ -62,7 +62,7 @@ if executable('factor') "{{{
 endif "}}}
 augroup ScratchBuffer "{{{
   autocmd!
-  autocmd StdinReadPre * setlocal buftype=nofile bufhidden=hide noswapfile
+  "autocmd VimEnter * if expand('%') == "" | setlocal buftype=nofile bufhidden=hide noswapfile | endif
 augroup END "}}}
 if has('syntax') "{{{
   syntax enable
@@ -96,6 +96,7 @@ if has('eval') "{{{
   let g:eskk#keep_state=1
   let g:eskk#show_annotation=1
   let g:eskk#use_azik=1
+  "let g:eskk#no_builtin_modes=1
   let g:eskk#azik_enable_precise_shift=0
   let g:eskk#azik_keyboard_type="us101"
   let g:html_indent_script1="auto"    " ~/.vim/ftplugin/html.vim
@@ -125,6 +126,26 @@ if has('eval') "{{{
   function! s:eskk_initial_pre() abort "{{{
     if g:eskk#use_azik "{{{
       let t=eskk#table#new('rom_to_hira*', 'rom_to_hira') "{{{
+      call t.remove_map('cha')
+      call t.remove_map('che')
+      call t.remove_map('chi')
+      call t.remove_map('cho')
+      call t.remove_map('chu')
+      call t.remove_map('dha')
+      call t.remove_map('dhe')
+      call t.remove_map('dhi')
+      call t.remove_map('dho')
+      call t.remove_map('dhu')
+      call t.remove_map('sha')
+      call t.remove_map('she')
+      call t.remove_map('shi')
+      call t.remove_map('sho')
+      call t.remove_map('shu')
+      call t.remove_map('tha')
+      call t.remove_map('the')
+      call t.remove_map('thi')
+      call t.remove_map('tho')
+      call t.remove_map('thu')
       call t.add_map('x[', '「')
       call t.add_map('_', '「')
       call t.add_map('z_', '『')
