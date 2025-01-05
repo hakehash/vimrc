@@ -87,7 +87,9 @@ if has('syntax') "{{{
     colorscheme industry
   endif
   filetype plugin indent on
-  let &colorcolumn='+'.join(range(1,256),',+')
+  if &term!="linux"
+    let &colorcolumn='+'.join(range(1,256),',+')
+  endif
 endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
