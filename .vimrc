@@ -104,10 +104,15 @@ if has('eval') "{{{
   let g:html_indent_script1="auto"    " ~/.vim/ftplugin/html.vim
   let g:html_indent_style1="auto"
   let g:loaded_matchparen=1
-  augroup VimStartup
-    autocmd!
-    autocmd VimEnter * if expand('%') == "" | let g:loaded_netrw=1 | let g:loaded_netrwPlugin=1 | endif
-  augroup END
+  if v:version > 703
+    augroup VimStartup
+      autocmd!
+      autocmd VimEnter * if expand('%') == "" | let g:loaded_netrw=1 | let g:loaded_netrwPlugin=1 | endif
+    augroup END
+  else
+    let g:loaded_netrw=1
+    let g:loaded_netrwPlugin=1
+  endif
   if v:version > 703 || (v:version == 703 && has('patch32'))
     let g:plugin_skk_disable=1
   endif
