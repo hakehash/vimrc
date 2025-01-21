@@ -93,6 +93,7 @@ if has('syntax') "{{{
 endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
+  "let g:eskk#dictionary = {'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'euc-jp',}
   let g:eskk#egg_like_newline=1
   let g:eskk#enable_completion=0
   let g:eskk#keep_state=1
