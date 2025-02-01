@@ -1,9 +1,7 @@
 ;; (require 'profiler)
 ;; (profiler-start 'cpu)
 (global-font-lock-mode t)
-(add-hook 'tty-setup-hook
-          (lambda ()
-            (set-terminal-parameter nil 'background-mode 'dark)))
+(add-hook 'tty-setup-hook (lambda () (set-terminal-parameter nil 'background-mode 'dark)))
 (setq buffer-file-coding-system 'utf-8)
 (setq global-auto-revert-mode t)
 (setq column-number-mode t)
