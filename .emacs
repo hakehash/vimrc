@@ -29,6 +29,7 @@
 (setq zoneinfo-style-world-list
   '(("Europe/London" "London")
     ("Europe/Rome" "Rome")
+    ("Europe/Helsinki" "Helsinki")
     ("Europe/Moscow" "Moscow")
     ("Asia/Tokyo" "Tokyo")))
 (defun fairfield (m d)
@@ -47,11 +48,13 @@
         (and (= m 10) (= d octe) (>= h 1)))
   (setq legacy-style-world-list
     '(("GMT0" "London")
-      ("GMT-3MSK" "Moscow")
+      ("EET-2" "Helsinki")
+      ("MSK-3" "Moscow")
       ("JST-9" "Tokyo")))
   (setq legacy-style-world-list
-    '(("GMT-1BST" "London")
-      ("GMT-3MSK" "Moscow")
+    '(("BST-1" "London")
+      ("EEST-3" "Helsinki")
+      ("MSK-3" "Moscow")
       ("JST-9" "Tokyo"))))
 (set-language-environment 'Japanese)
 (quail-define-package
