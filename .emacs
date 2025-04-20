@@ -53,7 +53,7 @@
       ("JST-9" "Tokyo")))
   (setq legacy-style-world-list
     '(("BST-1" "London")
-      ("EEST-3" "Helsinki")
+      ("EES-3" "Helsinki")
       ("MSK-3" "Moscow")
       ("JST-9" "Tokyo"))))
 (set-language-environment 'Japanese)
@@ -84,6 +84,34 @@
   ("J" ?О) ("K" ?Л) ("L" ?Д) ("+" ?Ж) ("*" ?Э) ("}" ?Ё)
   ("Z" ?Я) ("X" ?Ч) ("C" ?С) ("V" ?М) ("B" ?И)
   ("N" ?Т) ("M" ?Ь) ("<" ?Б) (">" ?Ю) ("?" ?,))
+
+(quail-define-package
+  "english-dvorak-oadg106" "Russian" "RU" nil
+  "Dvorak layout for OADG 106 keyboard"
+  nil t t t t nil nil nil nil nil t)
+
+;; '" ,< .> P  Y  F  G  C  R  L  /? =+ \|
+;;  A  O  E  U  I  D  H  T  N  S  -_
+;;   ;: Q  J  K  X  B  M  W  V  Z
+
+(quail-define-rules
+  ("1" ?1) ("2" ?2) ("3" ?3) ("4" ?4) ("5" ?5)
+  ("6" ?6) ("7" ?7) ("8" ?8) ("9" ?9) ("0" ?0) ("-" ?[) ("^" ?]) ("\\" ?\\)
+  ("q" ?') ("w" ?,) ("e" ?.) ("r" ?p) ("t" ?y) ("y" ?f)
+  ("u" ?g) ("i" ?c) ("o" ?r) ("p" ?l) ("@" ?/) ("[" ?=)
+  ("a" ?a) ("s" ?o) ("d" ?e) ("f" ?u) ("g" ?i) ("h" ?d)
+  ("j" ?h) ("k" ?t) ("l" ?n) (";" ?s) (":" ?-)
+  ("z" ?\;) ("x" ?q) ("c" ?j) ("v" ?k) ("b" ?x)
+  ("n" ?b) ("m" ?m) ("," ?w) ("." ?v) ("/" ?z)
+  ("!" ?!) ("\"" ?@") ("#" ?#) ("$" ?$) ("%" ?%) ("&" ?^)
+  ("'" ?&) ("(" ?\() (")" ?\)) ("=" ?{) ("~" ?}) ("|" ?/)
+  ("Q" ?") ("W" ?<) ("E" ?>) ("R" ?P) ("T" ?Y) ("Y" ?F)
+  ("U" ?G) ("I" ?C) ("O" ?R) ("P" ?L) ("`" ??) ("{" ?+)
+  ("A" ?A) ("S" ?O) ("D" ?E) ("F" ?U) ("G" ?I) ("H" ?D)
+  ("J" ?H) ("K" ?T) ("L" ?N) ("+" ?S) ("*" ?_)
+  ("Z" ?\:) ("X" ?Q) ("C" ?J) ("V" ?K) ("B" ?X)
+  ("N" ?B) ("M" ?M) ("<" ?W) (">" ?V) ("?" ?Z)
+  )
 
 (require 'skk-setup)
 (setq skk-auto-insert-paren t)
