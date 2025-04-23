@@ -86,7 +86,7 @@
   ("N" ?Т) ("M" ?Ь) ("<" ?Б) (">" ?Ю) ("?" ?,))
 
 (quail-define-package
-  "english-dvorak-oadg106" "Russian" "RU" nil
+  "english-dvorak-oadg106" "English" "DVJ@" t
   "Dvorak layout for OADG 106 keyboard"
   nil t t t t nil nil nil nil nil t)
 
