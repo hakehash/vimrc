@@ -5,6 +5,7 @@
 (setq global-auto-revert-mode t)
 (setq column-number-mode t)
 (setq line-number-mode t)
+(add-to-list 'default-frame-alist '(width . 90))
 (setq display-time-interval 1)
 (setq display-time-format "%T")
 (display-time)
