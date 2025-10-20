@@ -173,6 +173,7 @@
 (setq comint-prompt-read-only t)
 (when (eq window-system 'w32)
   ;; (set-face-background 'default "Light Yellow")
+  (set-frame-font "-*-Consolas-regular-normal-normal-*-*-*-*-*-m-0-iso10646-1")
   (setq explicit-shell-file-name "powershell")
   (setq explicit-powershell-args '("-File" "-"))
   (add-hook 'shell-mode-hook (lambda () (set-buffer-process-coding-system 'japanese-shift-jis 'utf-8)))
