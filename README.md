@@ -58,7 +58,7 @@ Copy **.config/nvim/init.vim**, **.exrc**, and **.vimrc** to your home directory
 
 If you use [Neovim](https://github.com/neovim/neovim) on Windows, copy **init.vim** to following directory:
 
-    $HOME/AppData/Local/nvim/
+    %USERPROFILE%\AppData\Local\nvim\
 
 ### for nvi users
 Copy **.exrc** and **.nexrc** to your home directory.
