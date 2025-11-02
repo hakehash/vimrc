@@ -35,7 +35,7 @@ if !has('nvim') "{{{
       silent !sl
       redraw!
     endfunction
-    if !exists(":SL")
+    if !exists(':SL')
       command! -nargs=? SL call SL(<f-args>)
       cnoreabbrev sl SL
     endif
@@ -2015,7 +2015,10 @@ if has('multi_lang')
   set helplang=ja,en,ru
 endif
 set hidden
-set incsearch
+if has('extra_search')
+  set nohlsearch
+  set incsearch
+endif
 set keywordprg=:help
 set laststatus=1
 if has('linebreak')
