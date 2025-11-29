@@ -2,7 +2,7 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
-augroup RestoreCursor
+augroup RestoreCursorPosition
   autocmd!
   autocmd BufReadPre * autocmd FileType <buffer> ++once
         \ let s:line = line("'\"")
@@ -11,6 +11,14 @@ augroup RestoreCursor
         \      && !&diff
         \ |   execute "normal! g`\""
         \ | endif
+augroup END
+augroup RestoreCursorShape
+  autocmd VimEnter,VimResume * set guicursor&
+  if has('win32')
+    autocmd VimLeave,VimSuspend * set guicursor=a:ver25-blinkon500-blinkoff500
+  else
+    autocmd VimLeave,VimSuspend * set guicursor=a:block-blinkon500-blinkoff500
+  endif
 augroup END
 set cpoptions+=_
 set clipboard=unnamedplus
