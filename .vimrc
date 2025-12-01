@@ -1,5 +1,5 @@
 scriptencoding utf-8
-if has('vim_starting') && has('reltime') && !has('win32') "{{{
+if has('vim_starting') && has('reltime') && !has('win32') || has('nvim') "{{{
   augroup VimStartupTime
     autocmd!
     let g:startuptime=reltime()
