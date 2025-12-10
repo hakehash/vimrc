@@ -2040,6 +2040,9 @@ if has('cmdline_info')
   set ruler
   set showcmd
 endif
+if has('win32') && executable('powershell')
+  set shell=powershell
+endif
 set shiftround
 set shortmess+=A
 set shortmess-=S
