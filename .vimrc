@@ -60,10 +60,10 @@ endif "}}}
 if executable('factor') "{{{
   command! -nargs=1 Pf let @+=substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g") | echomsg expand(@+)
 endif "}}}
-augroup ScratchBuffer "{{{
-  autocmd!
+"augroup ScratchBuffer "{{{
+  "autocmd!
   "autocmd VimEnter * if expand('%') == "" | setlocal buftype=nofile bufhidden=hide noswapfile | endif
-augroup END "}}}
+"augroup END "}}}
 if has('syntax') "{{{
   syntax enable
   augroup HighlightTuning
@@ -79,9 +79,9 @@ if has('syntax') "{{{
     autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
     autocmd ColorScheme * highlight PmenuSbar ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight Special ctermfg=LightRed guifg=LightRed
-    autocmd ColorScheme * highlight Statusline cterm=bold ctermfg=LightGrey ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight StatuslineNC cterm=NONE ctermfg=DarkGrey ctermbg=NONE
-    autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=DarkGrey ctermbg=NONE
+    autocmd ColorScheme * highlight Statusline cterm=bold ctermfg=LightGrey ctermbg=NONE guifg=#c0c0c0 guibg=NONE
+    autocmd ColorScheme * highlight StatuslineNC cterm=NONE ctermfg=DarkGrey ctermbg=NONE guifg=#6c6c6c guibg=NONE
+    autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=DarkGrey ctermbg=NONE guifg=#6c6c6c guibg=NONE
   augroup END
   if filereadable(expand('$VIMRUNTIME/colors/industry.vim'))
     colorscheme industry
@@ -2006,7 +2006,7 @@ endif
 set errorbells
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
-set fillchars+=stl:-,stlnc:-
+set fillchars+=stl:_,stlnc:\ 
 if has('folding')
   set foldmethod=syntax
 endif
@@ -2027,7 +2027,7 @@ endif
 set listchars=tab:>-,trail:_
 set matchtime=1
 if has('mouse')
-  if executable('toolbox')
+  if executable('to_lbox')
     set mouse=a
   else
     set mouse=ch
@@ -2057,7 +2057,7 @@ if v:version > 703 || (v:version == 703 && has('patch693'))
 endif
 set spelllang=en,cjk
 if has('statusline')
-  set statusline=-
+  set statusline=
 endif
 set nostartofline
 set noswapfile
