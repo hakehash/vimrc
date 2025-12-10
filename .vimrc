@@ -2027,7 +2027,7 @@ endif
 set listchars=tab:>-,trail:_
 set matchtime=1
 if has('mouse')
-  if executable('to_lbox')
+  if executable('toolbox')
     set mouse=a
   else
     set mouse=ch
