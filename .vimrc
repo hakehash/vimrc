@@ -2006,7 +2006,7 @@ endif
 set errorbells
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,iso-2022-jp,euc-jp,sjis,cp932,latin1
-set fillchars+=stl:_,stlnc:\ 
+set fillchars+=stl:\ ,stlnc:\ 
 if has('folding')
   set foldmethod=syntax
 endif
@@ -2039,6 +2039,7 @@ endif
 if has('cmdline_info')
   set ruler
   set showcmd
+  set showcmdloc=last
 endif
 if has('win32') && executable('powershell')
   set shell=powershell

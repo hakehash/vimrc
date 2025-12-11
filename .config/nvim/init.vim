@@ -13,6 +13,7 @@ augroup RestoreCursorPosition
         \ | endif
 augroup END
 augroup RestoreCursorShape
+  autocmd!
   autocmd VimEnter,VimResume * set guicursor&
   if has('win32')
     autocmd VimLeave,VimSuspend * set guicursor=a:ver25-blinkon500-blinkoff500
@@ -20,12 +21,18 @@ augroup RestoreCursorShape
     autocmd VimLeave,VimSuspend * set guicursor=a:block-blinkon500-blinkoff500
   endif
 augroup END
+augroup TermStartInsert
+  autocmd!
+  autocmd TermOpen * startinsert
+augroup END
 let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
 let g:loaded_python3_provider = 0
 let g:loaded_ruby_provider = 0
 set cpoptions+=_
 set clipboard=unnamedplus
+set cmdheight=0
 set helplang=en
 set inccommand=split
-"set laststatus=3
+set laststatus=3
+set showcmdloc=statusline
