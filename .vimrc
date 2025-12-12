@@ -54,16 +54,15 @@ if !has('nvim') "{{{
 else
   silent! source ~/.exrc
 endif "}}}
+" commands {{{
 if executable('evince') "{{{
   command! Evince !evince %:r.pdf &
 endif "}}}
 if executable('factor') "{{{
   command! -nargs=1 Pf let @+=substitute(substitute(system('factor',<q-args>),": ","=","")," ","*","g") | echomsg expand(@+)
 endif "}}}
-"augroup ScratchBuffer "{{{
-  "autocmd!
-  "autocmd VimEnter * if expand('%') == "" | setlocal buftype=nofile bufhidden=hide noswapfile | endif
-"augroup END "}}}
+command! -range=% Tac :<line1>,<line2>global/^/move <line1>-1
+" }}}
 if has('syntax') "{{{
   syntax enable
   augroup HighlightTuning
