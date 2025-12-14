@@ -2057,7 +2057,23 @@ if v:version > 703 || (v:version == 703 && has('patch693'))
 endif
 set spelllang=en,cjk
 if has('statusline')
-  set statusline=
+  function! LastSearchCount() abort "{{{
+    let result = searchcount(#{recompute: 0})
+    if empty(result)
+      return ''
+    endif
+    if result.incomplete ==# 1     " timed out
+      return printf('/%s%%=%%-21.([?/??]%%)',@/)
+    elseif result.incomplete ==# 2 " max count exceeded
+      if result.total > result.maxcount && result.current > result.maxcount
+        return printf('/%s%%=%%-21.([>%d/>%d]%%)',@/,result.current-1,result.total-1)
+      elseif result.total > result.maxcount
+        return printf('/%s%%=%%-21.([%d/>%d]%%)',@/,result.current,result.total-1)
+      endif
+    endif
+    return printf('/%s%%=%%-21.([%d/%d]%%)',@/,result.current,result.total)
+  endfunction "}}}
+  set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}\ %-14.(%l,%c%V%)\ %P
 endif
 set nostartofline
 set noswapfile
