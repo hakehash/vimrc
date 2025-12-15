@@ -2058,22 +2058,22 @@ endif
 set spelllang=en,cjk
 if has('statusline')
   function! LastSearchCount() abort "{{{
-    let result = searchcount(#{recompute: 0})
+    let result = searchcount(#{recompute: 1})
     if empty(result)
-      return ''
+      return '%='
     endif
     if result.incomplete ==# 1     " timed out
-      return printf('/%s%%=[?/??]%%12.(%%)',@/)
+      return printf('/%s%%=[?/??]',@/)
     elseif result.incomplete ==# 2 " max count exceeded
       if result.total > result.maxcount && result.current > result.maxcount
-        return printf('/%s%%=[>%d/>%d]%%12.(%%)',@/,result.current-1,result.total-1)
+        return printf('/%s%%=[>%d/>%d]',@/,result.current-1,result.total-1)
       elseif result.total > result.maxcount
-        return printf('/%s%%=[%d/>%d]%%12.(%%)',@/,result.current,result.total-1)
+        return printf('/%s%%=[%d/>%d]',@/,result.current,result.total-1)
       endif
     endif
-    return printf('/%s%%=[%d/%d]%%12.(%%)',@/,result.current,result.total)
+    return printf('/%s%%=[%d/%d]',@/,result.current,result.total)
   endfunction "}}}
-  set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}\ %-14.(%l,%c%V%)\ %P
+  set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)\ %P
 endif
 set nostartofline
 set noswapfile
