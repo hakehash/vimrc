@@ -2058,21 +2058,26 @@ if v:version > 703 || (v:version == 703 && has('patch693'))
 endif
 set spelllang=en,cjk
 if has('statusline')
+  let g:w=""
   function! LastSearchCount() abort "{{{
-    let result = searchcount(#{recompute: 1})
-    if empty(result)
+    let l:result = searchcount(#{recompute: 1})
+    if empty(l:result)
       return '%='
     endif
-    if result.incomplete ==# 1     " timed out
+    let l:w=g:w
+    if !empty(g:w)
+      let g:w=""
+    endif
+    if l:result.incomplete ==# 1     " timed out
       return printf('/%s%%=[?/??]',@/)
-    elseif result.incomplete ==# 2 " max count exceeded
-      if result.total > result.maxcount && result.current > result.maxcount
-        return printf('/%s%%=[>%d/>%d]',@/,result.current-1,result.total-1)
-      elseif result.total > result.maxcount
-        return printf('/%s%%=[%d/>%d]',@/,result.current,result.total-1)
+    elseif l:result.incomplete ==# 2 " max count exceeded
+      if l:result.total > l:result.maxcount && l:result.current > l:result.maxcount
+        return printf('/%s%%=%s[>%d/>%d]',@/,l:w,l:result.current-1,l:result.total-1)
+      elseif l:result.total > l:result.maxcount
+        return printf('/%s%%=%s[%d/>%d]',@/,l:w,l:result.current,l:result.total-1)
       endif
     endif
-    return printf('/%s%%=[%d/%d]',@/,result.current,result.total)
+    return printf('/%s%%=%s[%d/%d]',@/,l:w,l:result.current,l:result.total)
   endfunction "}}}
   set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)\ %P
 endif

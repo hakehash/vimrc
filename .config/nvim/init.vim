@@ -26,6 +26,10 @@ augroup TermStartInsert
   autocmd!
   autocmd TermOpen * startinsert
 augroup END
+augroup SearchWrappedIndicator
+  autocmd!
+  autocmd SearchWrapped * let g:w="W\ "
+augroup END
 let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
 let g:loaded_python3_provider = 0
