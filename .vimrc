@@ -2039,7 +2039,9 @@ endif
 if has('cmdline_info')
   set ruler
   set showcmd
-  set showcmdloc=last
+  if has('patch-9.0.1061')
+    set showcmdloc=last
+  endif
 endif
 if has('win32') && executable('powershell')
   set shell=powershell
