@@ -2045,6 +2045,7 @@ if has('cmdline_info')
 endif
 if has('win32') && executable('powershell')
   set shell=powershell
+  set shellcmdflag=-Command
 endif
 set shiftround
 set shortmess+=A
