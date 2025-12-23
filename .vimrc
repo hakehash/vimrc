@@ -2082,7 +2082,11 @@ if has('statusline')
     endif
     return printf('/%s%%=%s[%d/%d]',@/,l:w,l:result.current,l:result.total)
   endfunction "}}}
-  set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)\ %P
+  if has('patch-9.0.1061')
+    set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)\ %P
+  else
+    set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %)%-14.(%l,%c%V%)\ %P
+  endif
 endif
 set nostartofline
 set noswapfile
