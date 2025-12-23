@@ -40,8 +40,9 @@ set cmdheight=0
 set helplang=en
 set inccommand=split
 set laststatus=3
-if !has('nvim-0.9.0')
+if has('nvim-0.9.0')
   set showcmdloc=statusline
-else
   set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)\ %P
+else
+  set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %)%-14.(%l,%c%V%)\ %P
 endif
