@@ -2088,8 +2088,10 @@ if has('statusline')
   endfunction "}}}
   if has('patch-9.0.1061')
     set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)\ %P
-  else
+  elseif has('patch-8.2.2854')
     set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %)%-14.(%l,%c%V%)\ %P
+  else
+    set statusline=%<%f\ %h%w%m%r%=%-14.(%l,%c%V%)\ %P
   endif
 endif
 set nostartofline
