@@ -100,7 +100,11 @@ if has('eval') "{{{
   let g:eskk#use_azik=1
   "let g:eskk#no_builtin_modes=1
   let g:eskk#azik_enable_precise_shift=0
-  let g:eskk#azik_keyboard_type="us101"
+  if has('win32') && system('reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters /v "LayerDriver JPN"')=~"kbd106\.dll"
+    let g:eskk#azik_keyboard_type="jp106"
+  else
+    let g:eskk#azik_keyboard_type="us101"
+  endif
   let g:html_indent_script1="auto"    " ~/.vim/ftplugin/html.vim
   let g:html_indent_style1="auto"
   let g:loaded_matchparen=1
