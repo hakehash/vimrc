@@ -1,0 +1,18 @@
+clear
+daemonize
+ctrl+semicolon start,cursorzoom 2 2
+Escape end
+ctrl+bracketleft end
+semicolon end
+q quit
+r restart
+h move-left 8,warp
+j move-down 8,warp
+k move-up 8,warp
+l move-right 8,warp
+1 click 1
+2 click 2
+3 click 3
+4 click 4
+5 click 5
+space doubleclick 1
