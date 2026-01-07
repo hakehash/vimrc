@@ -36,10 +36,14 @@ let g:loaded_python3_provider = 0
 let g:loaded_ruby_provider = 0
 set cpoptions+=_
 set clipboard=unnamedplus
-set cmdheight=0
+if has('nvim-0.8.0')
+  set cmdheight=0
+endif
 set helplang=en
 set inccommand=split
-set laststatus=3
+if has('nvim-0.7.0')
+  set laststatus=3
+endif
 if has('nvim-0.9.0')
   set showcmdloc=statusline
   set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)\ %P
