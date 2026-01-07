@@ -36,7 +36,7 @@ if !has('nvim') "{{{
       redraw!
     endfunction
     if !exists(':SL')
-      command! -nargs=? SL call SL(<f-args>)
+      command! -nargs=? SL call g:SL(<f-args>)
       cnoreabbrev sl SL
     endif
   endif "}}}
@@ -1944,14 +1944,29 @@ if exists('*strftime')
   inoremap <expr> <F5> strftime(g:changelog_dateformat)
 endif
 if has('keymap') "{{{
-  function! g:ToggleJcuken()
+  function! g:ToggleJcuken() "{{{
     if &keymap!="russian-jcukenwin"
       set keymap=russian-jcukenwin
     else
       set keymap&
     endif
-  endfunction
-  inoremap <C-r> <Esc>:call ToggleJcuken()<CR>a
+  endfunction "}}}
+  inoremap <C-r> <Esc>:call g:ToggleJcuken()<CR>a
+  function! g:ToggleMorse()"{{{
+    if &keymap!="morse"
+      set keymap=morse
+      set updatetime=1200
+      augroup MorseAutoShift
+        autocmd!
+        autocmd CursorHoldI * call feedkeys("\<Space>")
+      augroup END
+    else
+      set keymap&
+      set updatetime&
+      autocmd! MorseAutoShift
+    endif
+  endfunction "}}}
+  inoremap <C-m> <Esc>:call g:ToggleMorse()<CR>a
 endif "}}}
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
