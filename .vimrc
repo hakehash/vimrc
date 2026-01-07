@@ -1966,7 +1966,7 @@ if has('keymap') "{{{
       autocmd! MorseAutoShift
     endif
   endfunction "}}}
-  inoremap <C-m> <Esc>:call g:ToggleMorse()<CR>a
+  "inoremap <C-m> <Esc>:call g:ToggleMorse()<CR>a
 endif "}}}
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
