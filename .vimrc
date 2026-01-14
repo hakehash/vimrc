@@ -1960,13 +1960,16 @@ if has('keymap') "{{{
         autocmd!
         autocmd CursorHoldI * call feedkeys("\<Space>")
       augroup END
+      iunmap -.-.-
+      inoremap ...-.- <Esc>:call g:ToggleMorse()<CR>a
     else
       set keymap&
       set updatetime&
       autocmd! MorseAutoShift
+      inoremap -.-.- <Esc>:call g:ToggleMorse()<CR>a
     endif
   endfunction "}}}
-  "inoremap <C-m> <Esc>:call g:ToggleMorse()<CR>a
+  inoremap -.-.- <Esc>:call g:ToggleMorse()<CR>a
 endif "}}}
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
@@ -2038,6 +2041,7 @@ if has('extra_search')
   set nohlsearch
   set incsearch
 endif
+set iskeyword-=_
 set keywordprg=:help
 set laststatus=1
 if has('linebreak')
