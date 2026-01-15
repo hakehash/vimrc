@@ -1966,6 +1966,7 @@ if has('keymap') "{{{
       set keymap&
       set updatetime&
       autocmd! MorseAutoShift
+      iunmap ...-.-
       inoremap -.-.- <Esc>:call g:ToggleMorse()<CR>a
     endif
   endfunction "}}}
