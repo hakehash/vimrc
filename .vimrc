@@ -1951,7 +1951,7 @@ if has('keymap') "{{{
       set keymap&
     endif
   endfunction "}}}
-  inoremap <C-r> <Esc>:call g:ToggleJcuken()<CR>a
+  inoremap <C-r> <C-o>:call g:ToggleJcuken()<CR>
   function! g:ToggleMorse()"{{{
     if &keymap!="morse"
       set keymap=morse
@@ -1961,20 +1961,20 @@ if has('keymap') "{{{
         autocmd CursorHoldI * call feedkeys("\<Space>")
       augroup END
       iunmap -.-.-
-      inoremap ...-.- <Esc>:call g:ToggleMorse()<CR>a
+      inoremap ...-.- <C-o>:call g:ToggleMorse()<CR>
     else
       set keymap&
       set updatetime&
       autocmd! MorseAutoShift
       iunmap ...-.-
-      inoremap -.-.- <Esc>:call g:ToggleMorse()<CR>a
+      inoremap -.-.- <C-o>:call g:ToggleMorse()<CR>
     endif
   endfunction "}}}
-  inoremap -.-.- <Esc>:call g:ToggleMorse()<CR>a
+  inoremap -.-.- <C-o>:call g:ToggleMorse()<CR>
 endif "}}}
-inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
-inoremap { {}<LEFT>
+inoremap ( ()<C-g>U<LEFT>
+inoremap [ []<C-g>U<LEFT>
+inoremap { {}<C-g>U<LEFT>
 inoremap <Up> <C-o>gk
 inoremap <Down> <C-o>gj
 inoremap <Left> <C-g>U<Left>
