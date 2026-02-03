@@ -1,5 +1,5 @@
 # vimrc
-My dotfiles of [Vim](https://github.com/vim/vim), [Neovim](https://github.com/neovim/neovim), [nvi](https://fossies.org/linux/privat/old/nvi-1.81.6.tar.gz/), elvis, and nano, which compatible with Cygwin and WSL.  
+My dotfiles of [Vim](https://github.com/vim/vim), [Neovim](https://github.com/neovim/neovim), [nvi](https://fossies.org/linux/privat/old/nvi-1.81.6.tar.gz/), elvis, [xvi](http://martinwguy.net/xvi/), and nano, which compatible with Cygwin and WSL.  
 There is no error detected even if you are using vim.tiny!  
 (Of course I strongly recommend you to use Huge version of Vim :)  
 
@@ -72,9 +72,18 @@ Copy **.exrc** and **.elvisrc** to your home directory.
 
 ### for BusyBox vi users
 BustBox vi supports `$HOME/.exrc` since [2021-08-20](https://git.busybox.net/busybox/commit/?id=f9217cd235c2a139ae22cf549c7614724f1fc6cf).  
-Copy and rename .exrc_busybox to your home directory.
+Copy and rename **.exrc_busybox** to your home directory.
 
     cp .exrc_busybox ~/.exrc
+
+### for xvi users
+xvi 2.51 sources `$HOME/.exrc` automatically. Copy **.exrc** to your home directory.
+
+    cp .exrc ~
+
+xvi 2.50.3 or earlier does not sources it unless you set **XVINIT** environment variable to your .bashrc:
+
+    export XVINIT='source ~/.exrc'
 
 ### for nano users
 Copy **.nanorc** to your home directory.
