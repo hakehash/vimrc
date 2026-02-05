@@ -1944,7 +1944,7 @@ if exists('*strftime')
   inoremap <expr> <F5> strftime(g:changelog_dateformat)
 endif
 if has('keymap') "{{{
-  function! g:ToggleJcuken() "{{{
+  function! g:ToggleJcuken() abort"{{{
     if &keymap!="russian-jcukenwin"
       set keymap=russian-jcukenwin
     else
@@ -1952,7 +1952,7 @@ if has('keymap') "{{{
     endif
   endfunction "}}}
   inoremap <C-r> <C-o>:call g:ToggleJcuken()<CR>
-  function! g:ToggleMorse()"{{{
+  function! g:ToggleMorse() abort"{{{
     if &keymap!="morse"
       set keymap=morse
       set updatetime=1200
@@ -2086,9 +2086,16 @@ endif
 set spelllang=en,cjk
 if has('statusline')
   let g:w=""
+  let g:last_search_cleared=2
+  let g:save_search_pattern=""
   function! LastSearchCount() abort "{{{
     let l:result = searchcount(#{recompute: 1})
-    if empty(l:result)
+    if g:save_search_pattern != @/
+      let g:last_search_cleared -= 1
+    endif
+    let g:save_search_pattern=@/
+    if empty(l:result) || mode()!="n" || g:last_search_cleared != 0
+      let g:last_search_cleared=1
       return '%='
     endif
     let l:w=g:w
