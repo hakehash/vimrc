@@ -32,35 +32,33 @@ augroup SearchWrappedIndicator
 augroup END
 augroup LastStatusSwitch
   autocmd!
-  autocmd WinEnter * call LastStatusSwitcher()
+  autocmd WinNew * if winnr('$') > 1
+        \ |   if has('nvim-0.8.0')
+        \ |     set cmdheight=0
+        \ |   endif
+        \ |   if has('nvim-0.7.0')
+        \ |     set laststatus=3
+        \ |   endif
+        \ |   if has('nvim-0.9.0')
+        \ |     set showcmdloc=statusline
+        \ |   endif
+        \ | endif
+  autocmd WinClosed * if winnr('$') < 3
+        \ |   if has('nvim-0.8.0')
+        \ |     set cmdheight=1
+        \ |   endif
+        \ |   if has('nvim-0.7.0')
+        \ |     set laststatus=1
+        \ |   endif
+        \ |   if has('nvim-0.9.0')
+        \ |     set showcmdloc=last
+        \ |   endif
+        \ | endif
 augroup END
 let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
 let g:loaded_python3_provider = 0
 let g:loaded_ruby_provider = 0
-function! LastStatusSwitcher() abort
-  if winnr("$") > 1
-    if has('nvim-0.8.0')
-      set cmdheight=0
-    endif
-    if has('nvim-0.7.0')
-      set laststatus=3
-    endif
-    if has('nvim-0.9.0')
-      set showcmdloc=statusline
-    endif
-  else
-    if has('nvim-0.8.0')
-      set cmdheight=1
-    endif
-    if has('nvim-0.7.0')
-      set laststatus=1
-    endif
-    if has('nvim-0.9.0')
-      set showcmdloc=last
-    endif
-  endif
-endfunction
 set cpoptions+=_
 set clipboard=unnamedplus
 set helplang=en
