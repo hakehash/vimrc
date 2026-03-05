@@ -63,8 +63,3 @@ set cpoptions+=_
 set clipboard=unnamedplus
 set helplang=en
 set inccommand=split
-if has('nvim-0.9.0')
-  set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)\ %P
-elseif has('nvim-0.5.0')
-  set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %)%-14.(%l,%c%V%)\ %P
-endif

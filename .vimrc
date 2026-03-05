@@ -157,6 +157,7 @@ if has('eval') "{{{
       call t.remove_map('thi')
       call t.remove_map('tho')
       call t.remove_map('thu')
+      "call t.remove_map('-')
       call t.add_map('x[', '「')
       call t.add_map('_', '「')
       call t.add_map('z_', '『')
@@ -173,6 +174,7 @@ if has('eval') "{{{
       call t.add_map('xxk', '↑')
       call t.add_map('xxl', '→')
       call t.add_map('''', 'ー')
+      call t.add_map('z''', '～')
       call t.add_map(':', 'ー')
       call t.add_map('z:', '゜')
       call t.add_map('z;', '゛')
@@ -748,6 +750,7 @@ if has('eval') "{{{
       call t.remove_map('thi')
       call t.remove_map('tho')
       call t.remove_map('thu')
+      "call t.remove_map('-')
       call t.add_map('x[', '「')
       call t.add_map('_', '「')
       call t.add_map('z_', '『')
@@ -764,6 +767,7 @@ if has('eval') "{{{
       call t.add_map('xxk', '↑')
       call t.add_map('xxl', '→')
       call t.add_map('''', 'ー')
+      call t.add_map('z''', '～')
       call t.add_map(':', 'ー')
       call t.add_map('z:', '゜')
       call t.add_map('z;', '゛')
@@ -1339,6 +1343,7 @@ if has('eval') "{{{
       call t.remove_map('thi')
       call t.remove_map('tho')
       call t.remove_map('thu')
+      "call t.remove_map('-')
       call t.add_map('x[', '｢')
       call t.add_map('_', '｢')
       call t.add_map('z_', '『')
@@ -2113,10 +2118,10 @@ if has('statusline')
     endif
     return printf('/%s%%=%s[%d/%d]',@/,l:w,l:result.current,l:result.total)
   endfunction "}}}
-  if has('patch-9.0.1061')
-    set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)\ %P
-  elseif has('patch-8.2.2854')
-    set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %)%-14.(%l,%c%V%)\ %P
+  if has('patch-9.0.1061') || has('nvim-0.9.0')
+    set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)%-4P
+  elseif has('patch-8.2.2854') || has('nvim-0.5.0')
+    set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %)%-14.(%l,%c%V%)%-4P
   else
     set statusline=%<%f\ %h%w%m%r%=%-14.(%l,%c%V%)\ %P
   endif
