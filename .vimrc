@@ -1,5 +1,5 @@
 scriptencoding utf-8
-if has('vim_starting') && has('reltime') && !has('win32') || has('nvim') "{{{
+if has('vim_starting') && has('reltime') && (!has('win32') || has('nvim')) "{{{
   augroup VimStartupTime
     autocmd!
     let g:startuptime=reltime()
@@ -2016,6 +2016,9 @@ silent! while 0
   set nocompatible
 silent! endwhile
 set ambiwidth=double
+if has('patch-8.2.1535') || has('nvim-0.8.0')
+  call setcellwidths([[0xB0,0xB1,1],[0xC0,0x2AF,1],[0x370,0x52F,1]])
+endif
 if has('autochdir')
   set autochdir
 endif
@@ -2069,6 +2072,7 @@ if has('extra_search')
 endif
 set iskeyword-=_
 set keywordprg=:help
+set langmap=ΑΒΨΔΕΦΓΗΙΞΚΛΜΝΟΠQΡΣΤΘΩWΧΥΖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,αβψδεφγηιξκλμνοπqρστθωςχυζ;abcdefghijklmnopqrstuvwxyz,ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчняжі;abcdefghijklmnopqrstuvwxyz:s
 set laststatus=1
 if has('linebreak')
   set linebreak
