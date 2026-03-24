@@ -2072,7 +2072,7 @@ if has('extra_search')
 endif
 set iskeyword-=_
 set keywordprg=:help
-set langmap=ΑΒΨΔΕΦΓΗΙΞΚΛΜΝΟΠQΡΣΤΘΩWΧΥΖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,αβψδεφγηιξκλμνοπqρστθωςχυζ;abcdefghijklmnopqrstuvwxyz,ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчняжі;abcdefghijklmnopqrstuvwxyz:s
+set langmap=ΑΒΨΔΕΦΓΗΙΞΚΛΜΝΟΠΡΣΤΘΩΧΥΖ;ABCDEFGHIJKLMNOPRSTUVXYZ,αβψδεφγηιξκλμνοπρστθωςχυζ;abcdefghijklmnoprstuvwxyz,ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯІ;ABCDEFGHIJKLMNOPQRSTUVWXYZS,фисвуапршолдьтщзйкыегмцчняжі;abcdefghijklmnopqrstuvwxyz:s
 set laststatus=1
 if has('linebreak')
   set linebreak
