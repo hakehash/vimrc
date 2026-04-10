@@ -63,3 +63,6 @@ set cpoptions+=_
 set clipboard=unnamedplus
 set helplang=en
 set inccommand=split
+if has('nvim-0.12.0')
+  lua require('vim._core.ui2').enable()
+endif
