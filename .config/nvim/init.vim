@@ -65,4 +65,9 @@ set helplang=en
 set inccommand=split
 if has('nvim-0.12.0')
   lua require('vim._core.ui2').enable()
+  augroup ui2switch
+    autocmd!
+    autocmd User eskk-enable-pre lua require('vim._core.ui2').enable({enable=false})
+    autocmd InsertLeave * lua require('vim._core.ui2').enable({enable=true})
+  augroup END
 endif
