@@ -1981,16 +1981,16 @@ if has('keymap') "{{{
     if &keymap!="morse"
       set keymap=morse
       set updatetime=1200
-      augroup MorseAutoShift
-        autocmd!
-        autocmd CursorHoldI * call feedkeys("\<Space>")
-      augroup END
+      "augroup MorseAutoShift
+      "  autocmd!
+      "  autocmd CursorHoldI * call feedkeys("\<Space>")
+      "augroup END
       iunmap -.-.-
       inoremap ...-.- <C-o>:call g:ToggleMorse()<CR>
     else
       set keymap&
       set updatetime&
-      autocmd! MorseAutoShift
+      "autocmd! MorseAutoShift
       iunmap ...-.-
       inoremap -.-.- <C-o>:call g:ToggleMorse()<CR>
     endif
