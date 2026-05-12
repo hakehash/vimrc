@@ -2167,6 +2167,7 @@ set virtualedit=block
 set visualbell
 set whichwrap=b,s,~
 set wildmenu
+set winminheight=0
 set writebackup
 " }}}
 " vim: foldmethod=marker commentstring="%s nospell
