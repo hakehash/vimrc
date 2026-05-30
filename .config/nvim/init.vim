@@ -53,6 +53,9 @@ augroup LastStatusSwitch
         \ |   if has('nvim-0.9.0')
         \ |     set showcmdloc=last
         \ |   endif
+        \ |   if has('nvim-0.12.0')
+        \ |     call g:Ui2Switcher()
+        \ |   endif
         \ | endif
 augroup END
 let g:loaded_node_provider = 0
@@ -68,6 +71,14 @@ if has('nvim-0.12.0')
   augroup ui2switch
     autocmd!
     autocmd User eskk-enable-pre lua require('vim._core.ui2').enable({enable=false})
-    autocmd InsertLeave * lua require('vim._core.ui2').enable({enable=true})
+    autocmd InsertLeave * call g:Ui2Switcher()
+    autocmd WinNewPre * lua require('vim._core.ui2').enable({enable=false})
   augroup END
+  function! g:Ui2Switcher()
+    if &cmdheight==0
+      lua require('vim._core.ui2').enable({enable=false})
+    else
+      lua require('vim._core.ui2').enable({enable=true})
+    endif
+  endfunction
 endif
