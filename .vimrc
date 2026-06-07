@@ -100,7 +100,7 @@ if has('eval') "{{{
   let g:eskk#use_azik=1
   "let g:eskk#no_builtin_modes=1
   let g:eskk#azik_enable_precise_shift=0
-  if has('win32') && system('reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters /v "LayerDriver JPN"')=~"kbd106\.dll"
+  if has('win32') && system(['reg', 'query', 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters', '/v', 'LayerDriver JPN'])=~"kbd106\.dll"
     let g:eskk#azik_keyboard_type="jp106"
   else
     let g:eskk#azik_keyboard_type="us101"
@@ -1970,10 +1970,18 @@ if exists('*strftime')
 endif
 if has('keymap') "{{{
   function! g:ToggleJcuken() abort"{{{
-    if &keymap!="russian-jcukenwin"
-      set keymap=russian-jcukenwin
+    if has('win32') && system(['reg', 'query', 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters', '/v', 'LayerDriver JPN'])=~"kbd106\.dll"
+      if &keymap!="russian-jcuken-jp"
+        set keymap=russian-jcuken-jp
+      else
+        set keymap&
+      endif
     else
-      set keymap&
+      if &keymap!="russian-jcukenwin"
+        set keymap=russian-jcukenwin
+      else
+        set keymap&
+      endif
     endif
   endfunction "}}}
   inoremap <C-r> <C-o>:call g:ToggleJcuken()<CR>
