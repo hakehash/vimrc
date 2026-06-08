@@ -72,7 +72,7 @@ if has('syntax') "{{{
     autocmd ColorScheme * highlight Conceal ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLine ctermbg=NONE cterm=NONE guibg=NONE
     autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow guifg=Yellow
-    autocmd ColorScheme * highlight EndOfBuffer ctermfg=LightGrey ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight EndOfBuffer ctermfg=DarkGrey ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight Folded ctermbg=NONE guibg=NONE
     autocmd ColorScheme * highlight Identifier ctermfg=LightMagenta guifg=LightMagenta
     autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
