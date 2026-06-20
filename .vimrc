@@ -2127,15 +2127,41 @@ if has('statusline')
   let g:w=""
   let g:last_search_cleared=2
   let g:save_search_pattern=""
-  function! LastSearchCount() abort "{{{
+  function! g:ShowMode() abort"{{{
+    if mode()==#'i'
+      return '-- INSERT --'
+    elseif mode()==#'v'
+      return '-- VISUAL --'
+    elseif mode()==#'V'
+      return '-- VISUAL LINE --'
+    elseif mode()==''
+      return '-- VISUAL BLOCK --'
+    elseif mode()==#'s'
+      return '-- SELECT --'
+    elseif mode()==#'S'
+      return '-- SELECT LINE --'
+    elseif mode()==''
+      return '-- SELECT BLOCK --'
+    elseif mode(1)=~#'Rv'
+      return '-- VREPLACE --'
+    elseif mode()==#'R'
+      return '-- REPLACE --'
+    else
+      return ''
+    endif
+  endfunction "}}}
+  function! g:LastSearchCount() abort "{{{
     let l:result = searchcount(#{recompute: 1})
     if g:save_search_pattern != @/
       let g:last_search_cleared -= 1
     endif
     let g:save_search_pattern=@/
-    if empty(l:result) || mode()!="n" || g:last_search_cleared != 0
+    if mode()!='n'
       let g:last_search_cleared=1
-      return '%='
+      return '%{ShowMode()}%='
+    elseif empty(l:result) || g:last_search_cleared != 0
+      let g:last_search_cleared=1
+      return '%<%f %h%w%m%r%='
     endif
     let l:w=g:w
     if !empty(g:w)
@@ -2153,11 +2179,12 @@ if has('statusline')
     return printf('/%s%%=%s[%d/%d]',@/,l:w,l:result.current,l:result.total)
   endfunction "}}}
   if has('patch-9.0.1061') || has('nvim-0.9.0')
-    set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)%-4P
+    set statusline=%{%LastSearchCount()%}%-12.(\ \ %S%)%-14.(%l,%c%V%)%-4P
   elseif has('patch-8.2.2854') || has('nvim-0.5.0')
-    set statusline=%<%f\ %h%w%m%r\ %{%LastSearchCount()%}%-12.(\ \ %)%-14.(%l,%c%V%)%-4P
+    set statusline=%{%LastSearchCount()%}%-12.(\ \ %)%-14.(%l,%c%V%)%-4P
   else
-    set statusline=%<%f\ %h%w%m%r%=%-14.(%l,%c%V%)%-4P
+    "set statusline=%<%f\ %h%w%m%r%=%-14.(%l,%c%V%)%-4P
+    set statusline=%{ShowMode()}%=%-14.(%l,%c%V%)%-4P
   endif
 endif
 set nostartofline
