@@ -63,33 +63,6 @@ if executable('factor') "{{{
 endif "}}}
 command! -range=% Tac :<line1>,<line2>global/^/move <line1>-1
 " }}}
-if has('syntax') "{{{
-  syntax enable
-  augroup HighlightTuning
-    autocmd!
-    autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight ColorColumn ctermbg=DarkGrey guibg=DarkGrey
-    autocmd ColorScheme * highlight Conceal ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight CursorLine ctermbg=NONE cterm=NONE guibg=NONE
-    autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow guifg=Yellow
-    autocmd ColorScheme * highlight EndOfBuffer ctermfg=DarkGrey ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight Folded ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight Identifier ctermfg=LightMagenta guifg=LightMagenta
-    autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
-    autocmd ColorScheme * highlight PmenuSbar ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * highlight Special ctermfg=LightRed guifg=LightRed
-    autocmd ColorScheme * highlight Statusline cterm=bold ctermfg=LightGrey ctermbg=NONE guifg=#c0c0c0 guibg=NONE
-    autocmd ColorScheme * highlight StatuslineNC cterm=NONE ctermfg=DarkGrey ctermbg=NONE guifg=#6c6c6c guibg=NONE
-    autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=DarkGrey ctermbg=NONE guifg=#6c6c6c guibg=NONE
-  augroup END
-  if filereadable(expand('$VIMRUNTIME/colors/industry.vim'))
-    colorscheme industry
-  endif
-  filetype plugin indent on
-  if &term!="linux"
-    let &colorcolumn='+'.join(range(1,256),',+')
-  endif
-endif "}}}
 if has('eval') "{{{
   let g:changelog_dateformat="%Y-%m-%d" " ~/.vim/ftplugin/changelog.vim
   "let g:eskk#dictionary = {'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'euc-jp',}
@@ -126,6 +99,9 @@ if has('eval') "{{{
   let g:tex_flavor="latex"              " ~/.vim/ftplugin/tex.vim
   let g:tex_fold_enabled=1
   let g:vimsyn_folding="af"
+  if has('patch-9.1.0375')
+    packadd! comment
+  endif
   augroup EskkInit "{{{
     autocmd!
     autocmd User eskk-initialize-pre call s:eskk_initial_pre()
@@ -1959,6 +1935,33 @@ if has('eval') "{{{
       endif
     endif
   endfunction "}}}
+endif "}}}
+if has('syntax') "{{{
+  syntax enable
+  augroup HighlightTuning
+    autocmd!
+    autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight ColorColumn ctermbg=DarkGrey guibg=DarkGrey
+    autocmd ColorScheme * highlight Conceal ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight CursorLine ctermbg=NONE cterm=NONE guibg=NONE
+    autocmd ColorScheme * highlight CursorLineNr ctermfg=Yellow guifg=Yellow
+    autocmd ColorScheme * highlight EndOfBuffer ctermfg=DarkGrey ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight Folded ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight Identifier ctermfg=LightMagenta guifg=LightMagenta
+    autocmd ColorScheme * highlight LineNr ctermfg=DarkCyan guifg=DarkCyan
+    autocmd ColorScheme * highlight PmenuSbar ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight Special ctermfg=LightRed guifg=LightRed
+    autocmd ColorScheme * highlight Statusline cterm=bold ctermfg=LightGrey ctermbg=NONE guifg=#c0c0c0 guibg=NONE
+    autocmd ColorScheme * highlight StatuslineNC cterm=NONE ctermfg=DarkGrey ctermbg=NONE guifg=#6c6c6c guibg=NONE
+    autocmd ColorScheme * highlight VertSplit cterm=NONE ctermfg=DarkGrey ctermbg=NONE guifg=#6c6c6c guibg=NONE
+  augroup END
+  if filereadable(expand('$VIMRUNTIME/colors/industry.vim'))
+    colorscheme industry
+  endif
+  filetype plugin indent on
+  if &term!="linux"
+    let &colorcolumn='+'.join(range(1,256),',+')
+  endif
 endif "}}}
 "   map {{{
 noremap Y y$
