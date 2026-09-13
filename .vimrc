@@ -11,6 +11,9 @@ if !has('nvim') "{{{
     unlet! skip_defaults_vim
     source $VIMRUNTIME/defaults.vim
   endif "}}}
+  if has('patch-9.1.0375') "{{{
+    packadd! comment
+  endif "}}}
   if &term=~"^xterm\\|rxvt" "{{{
     let &t_te.="\e[0 q"
     let &t_ti.="\e[2 q"
@@ -99,9 +102,6 @@ if has('eval') "{{{
   let g:tex_flavor="latex"              " ~/.vim/ftplugin/tex.vim
   let g:tex_fold_enabled=1
   let g:vimsyn_folding="af"
-  if has('patch-9.1.0375')
-    packadd! comment
-  endif
   augroup EskkInit "{{{
     autocmd!
     autocmd User eskk-initialize-pre call s:eskk_initial_pre()
