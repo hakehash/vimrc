@@ -71,6 +71,7 @@ if has('nvim-0.12.0')
   augroup ui2switch
     autocmd!
     autocmd User eskk-enable-pre lua require('vim._core.ui2').enable({enable=false})
+    autocmd InsertEnter * call g:EskkChecker()
     autocmd InsertLeave * call g:Ui2Switcher()
     autocmd WinNewPre * lua require('vim._core.ui2').enable({enable=false})
   augroup END
@@ -79,6 +80,11 @@ if has('nvim-0.12.0')
       lua require('vim._core.ui2').enable({enable=false})
     else
       lua require('vim._core.ui2').enable({enable=true})
+    endif
+  endfunction
+  function! g:EskkChecker()
+    if eskk#is_enabled()
+      lua require('vim._core.ui2').enable({enable=false})
     endif
   endfunction
 endif
