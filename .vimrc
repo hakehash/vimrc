@@ -1972,7 +1972,7 @@ if exists('*strftime')
   inoremap <expr> <F5> strftime(g:changelog_dateformat)
 endif
 if has('keymap') "{{{
-  function! g:ToggleJcuken() abort"{{{
+  function! g:ToggleJcuken() abort "{{{
     if has('win32') && system(['reg', 'query', 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\i8042prt\Parameters', '/v', 'LayerDriver JPN'])=~"kbd106\.dll"
       if &keymap!="russian-jcuken-jp"
         set keymap=russian-jcuken-jp
@@ -1988,7 +1988,7 @@ if has('keymap') "{{{
     endif
   endfunction "}}}
   inoremap <C-r> <C-o>:call g:ToggleJcuken()<CR>
-  function! g:ToggleMorse() abort"{{{
+  function! g:ToggleMorse() abort "{{{
     if &keymap!="morse"
       set keymap=morse
       set updatetime=1200
@@ -2130,7 +2130,7 @@ if has('statusline')
   let g:w=""
   let g:last_search_cleared=2
   let g:save_search_pattern=""
-  function! g:ShowMode() abort"{{{
+  function! g:ShowMode() abort "{{{
     if mode()==#'i'
       return '-- INSERT --'
     elseif mode()==#'v'
