@@ -76,11 +76,11 @@ if has('nvim-0.12.0')
     autocmd WinNewPre * lua require('vim._core.ui2').enable({enable=false})
   augroup END
   function! g:Ui2Switcher()
-    if &cmdheight==0
-      lua require('vim._core.ui2').enable({enable=false})
-    else
-      lua require('vim._core.ui2').enable({enable=true})
-    endif
+    lua << trim
+    if vim.o.cmdheight~=0 and package.loaded['vim._core.ui2'].cfg.enable==false then
+      require('vim._core.ui2').enable({enable=true})
+    end
+    .
   endfunction
   function! g:EskkChecker()
     if eskk#is_enabled()
